@@ -1,0 +1,20 @@
+*{
+    box-sizing: border-box;
+}
+html,body{
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;  
+}
+#footer{
+    background: linear-gradient(90deg, #1c3643 0, #273b47 25%, #1e5372);
+    color:white;
+}
+.resaltado{
+    color: #97c93e !important;
+}
+main .carousel-inner img{
+    max-height: 50vh;
+    object-fit: cover;
+    filter:grayscale(70%);
+}
