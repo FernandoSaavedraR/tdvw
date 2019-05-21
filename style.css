@@ -14,7 +14,11 @@ html,body{
     color: #97c93e !important;
 }
 main .carousel-inner img{
-    max-height: 50vh;
+    height: 50vh;
     object-fit: cover;
     filter:grayscale(70%);
+}
+#pasteleros img{
+    height: 400px;
+    object-fit: cover;
 }
