@@ -4,7 +4,7 @@
 html,body{
     margin: 0;
     padding: 0;
-    min-height: 100vh;  
+    
 }
 #footer{
     background: linear-gradient(90deg, #1c3643 0, #273b47 25%, #1e5372);
@@ -21,4 +21,17 @@ main .carousel-inner img{
 #pasteleros img{
     height: 400px;
     object-fit: cover;
+}
+footer{
+   
+}
+nav{
+    width: 100%;
+}
+
+#pasteleros{
+    width: 100%;
+}
+main{
+    width: 100%;
 }
