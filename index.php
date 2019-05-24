@@ -1,19 +1,21 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="es">
   <head>
-    <meta charset="utf-8">
-    <title>Form login | Fazt</title>
-	 <link
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="css/master.css">
-      <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
+    <title>Tarte de la vie</title>
   </head>
+
   <body>
-  <!-- header -->
+    <!-- header -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container">
         <a class="navbar-brand" href="#">Navbar</a>
@@ -40,7 +42,7 @@
               <a class="nav-link" href="./conocenos.html">¡Conócenos!</a>
             </li>
             <li class="nav-item ml-3">
-              <a class="nav-link " href="#" tabindex="-1" aria-disabled="true"
+              <a class="nav-link " href="catalogo.html" tabindex="-1" aria-disabled="true"
                 >Nuestros Pasteles</a
               >
             </li>
@@ -63,24 +65,71 @@
       </div>
     </nav>
     <!-- /header -->
-  <div class="container ">
-		<div class="login-box row ">
-			<img class="logo" src="img/descarga.jpg" alt="logo de fondo">
-			<h1>Inicia Sesión</h1>
-			<form>
-			  <label for="username">Usuario</label>
-			  <input type="text" placeholder="&#9787;Usuario">
-
-			  <label for="password">Contraseña</label>
-			  <input type="password" placeholder="&#128273;Contraseña">
-
-			  <input type="submit" value="Login in"><br/>
-
-			  <a href="#">Crear una cuenta</a>
-		 </div>
-    </div>
-	
-	<script
+    <!-- main -->
+    <main>
+      <div
+        id="carouselExampleControls"
+        class="carousel slide "
+        data-ride="carousel"
+        data-pause="false"
+      >
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="./img/im1.jpg" class="d-block w-100" alt="img-crsl" />
+          </div>
+          <div class="carousel-item">
+            <img src="./img/im2.png" class="d-block w-100" alt="img-crsl" />
+          </div>
+          <div class="carousel-item">
+            <img src="./img/im3.jpg" class="d-block w-100" alt="img-crsl" />
+          </div>
+          <div class="carousel-item">
+            <img src="./img/im4.png" class="d-block w-100" alt="img-crsl" />
+          </div>
+          <div class="carousel-item">
+            <img src="./img/im5.jpg" class="d-block w-100" alt="img-crsl" />
+          </div>
+          <div class="carousel-item">
+            <img src="./img/im6.jpg" class="d-block w-100" alt="img-crsl" />
+          </div>
+        </div>
+        <a
+          class="carousel-control-prev"
+          href="#carouselExampleControls"
+          role="button"
+          data-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a
+          class="carousel-control-next"
+          href="#carouselExampleControls"
+          role="button"
+          data-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </main>
+    <!-- /main -->
+    <!-- footer -->
+    <footer id="footer" class="pb-3 pt-3">
+      <div class="container">
+        <div class="row text-center">
+          <div class="col-12 col-lg">
+            <a href="#" -12>Preguntas frecuentes</a>
+          </div>
+          <div class="col-12 col-lg">
+            <a href="#" -12>Contactanos</a>
+          </div>
+          <div class="col-12 col-lg">Derechos reservados Inges Inc &copy</div>
+        </div>
+      </div>
+    </footer>
+    <!-- /footer -->
+    <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
       integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
       crossorigin="anonymous"

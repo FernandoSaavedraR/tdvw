@@ -6,7 +6,6 @@
 			private $pass;
 			private $bd;
 			private $servidor;
-
 			public function __construct()
 			{
 					$this->user="root";
@@ -35,7 +34,6 @@
 				// }
 				mysqli_close($con);
 				return $resultados;
-
 			}
 			public function cambiar($nombre,$apellidos,$correo,$noma,$apa,$cora)
 			{
@@ -51,7 +49,5 @@
 				$con->query($quert);
 				mysqli_close($con);
 			}
-
 		}
-
 ?>

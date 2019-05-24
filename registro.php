@@ -59,7 +59,7 @@ function f()
               <a class="nav-link" href="conocenos.html">¡Conócenos!</a>
             </li>
             <li class="nav-item ml-3">
-              <a class="nav-link " href="#" tabindex="-1" aria-disabled="true"
+              <a class="nav-link " href="catalogo.html" tabindex="-1" aria-disabled="true"
                 >Nuestros Pasteles</a
               >
             </li>

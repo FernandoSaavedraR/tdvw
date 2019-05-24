@@ -42,7 +42,7 @@
               <a class="nav-link" href="./conocenos.html">¡Conócenos!</a>
             </li>
             <li class="nav-item ml-3">
-              <a class="nav-link " href="#" tabindex="-1" aria-disabled="true"
+              <a class="nav-link " href="catalogo.html" tabindex="-1" aria-disabled="true"
                 >Nuestros Pasteles</a
               >
             </li>
@@ -66,53 +66,70 @@
     </nav>
     <!-- /header -->
     <!-- main -->
-    <main>
-      <div
-        id="carouselExampleControls"
-        class="carousel slide "
-        data-ride="carousel"
-        data-pause="false"
-      >
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="./img/im1.jpg" class="d-block w-100" alt="img-crsl" />
-          </div>
-          <div class="carousel-item">
-            <img src="./img/im2.png" class="d-block w-100" alt="img-crsl" />
-          </div>
-          <div class="carousel-item">
-            <img src="./img/im3.jpg" class="d-block w-100" alt="img-crsl" />
-          </div>
-          <div class="carousel-item">
-            <img src="./img/im4.png" class="d-block w-100" alt="img-crsl" />
-          </div>
-          <div class="carousel-item">
-            <img src="./img/im5.jpg" class="d-block w-100" alt="img-crsl" />
-          </div>
-          <div class="carousel-item">
-            <img src="./img/im6.jpg" class="d-block w-100" alt="img-crsl" />
+    <section id="pasteleros">
+      <div class="container">
+        <div class="row mt-2 text-center">
+          <div class="col">
+            <small>Conoce a</small>
+            <h2>nuestros pasteleros</h2>
           </div>
         </div>
-        <a
-          class="carousel-control-prev"
-          href="#carouselExampleControls"
-          role="button"
-          data-slide="prev"
-        >
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a
-          class="carousel-control-next"
-          href="#carouselExampleControls"
-          role="button"
-          data-slide="next"
-        >
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
-      </div>
-    </main>
+        <div class="row text-center">
+          <div class=" offset-lg-2 col-lg-4 col-md-6 mb-2">
+            <div class="card" >
+              <img src="./img/inge.jpg" class="card-img-top" alt="pastelero img" />
+              <div class="card-body">
+                <h5 class="card-title">Javi Lopez</h5>
+                <p class="card-text">
+                  Pastelero desde los 15 años, capaz de hacerte el mejor 
+                  pastel imposible con los ojos cerrados.
+                </p>
+                <a href="#" class="btn btn-primary">Visita su facebook</a>
+              </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-2">
+            <div class="card" >
+              <img src="./img/julio.jpg" class="card-img-top" alt="pastelero img" />
+              <div class="card-body">
+                <h5 class="card-title">Julio Zuñiga</h5>
+                <p class="card-text">
+                  Creció en un barrio lejano donde los pasteleros entrenan con
+                  tigres, si necesitas un pastel el lo hace.
+                </p>
+                <a href="#" class="btn btn-primary">Visita su facebook</a>
+              </div>
+            </div>
+            </div>
+            <div class="offset-lg-2 col-lg-4 col-md-6 mb-2">
+            <div class="card" >
+              <img src="./img/hunny.jpg" class="card-img-top" alt="pastelero img" />
+              <div class="card-body">
+                <h5 class="card-title">Zitlaly Círigo</h5>
+                <p class="card-text">
+                  Un mounstruo haciendo pasteles, si lo necesitas
+                  ella lo hace.
+                </p>
+                <a href="#" class="btn btn-primary">Visita su facebook</a>
+              </div>
+            </div>
+            </div>
+            <div class=" col-lg-4 col-md-6 mb-2"">
+            <div class="card" >
+              <img src="./img/fer.jpeg" class="card-img-top" alt="pastelero img" />
+              <div class="card-body">
+                <h5 class="card-title">Fernando Saavedra</h5>
+                <p class="card-text">
+                  que su apariencia no te engañe, es el mejor pastelero de la costa 
+                  oeste.
+                </p>
+                <a href="#" class="btn btn-primary">Visita su facebook</a>
+              </div>
+            </div>
+            </div>  
+          </div>
+        </div>
+    </section>
     <!-- /main -->
     <!-- footer -->
     <footer id="footer" class="pb-3 pt-3">
