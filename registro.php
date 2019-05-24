@@ -4,9 +4,9 @@ function f()
 {
   if(isset($_POST["nombre"]) && isset($_POST["apellidos"]) && isset($_POST["usuario"])&& isset($_POST["pass"]) && isset($_POST["sexo"]))
     {
-      $NOMBRE = 
+      $NOMBRE =
       $con = new baseDatos();
-      $con -> insertar("CALL ALTA_CLIENTE(\"\") ");
+      $con -> insertar("CALL  ALTA_CLIENTE(\"$_POST["nombre"]\",\"$_POST["apellidos"]\",".$_POST["sexo"].",\"$_POST["usuario"]\",\"$_POST["pass"]\",) ");
     }
     else
     {
@@ -150,6 +150,7 @@ function f()
           </div>
         </div>
       </form>
+      <?php f(); ?>
     </main>
     <!-- /main -->
     <!-- footer -->
