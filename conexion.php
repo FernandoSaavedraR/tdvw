@@ -5,13 +5,13 @@
 			private $usuario;
 			private $pass;
 			private $bd;
-			private $server;
+			private $servidor;
 			
 			public function __construct()
 			{
 					$this->user="root";
 					$this->pass ="n0m3l0";
-					$this->bd="mapamundi";
+					$this->bd="tartedelavie";
 					$this->servidor="localhost";
 			}
 			public function conectar()

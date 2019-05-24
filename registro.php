@@ -16,6 +16,7 @@
 
   <body>
     <!-- header -->
+
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container">
         <a class="navbar-brand" href="#">Navbar</a>
@@ -34,15 +35,15 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active ml-3">
-              <a class="nav-link" href="./index.html"
+              <a class="nav-link" href="index.html"
                 >Home <span class="sr-only">(current)</span></a
               >
             </li>
             <li class="nav-item ml-3">
-              <a class="nav-link" href="./conocenos.html">¡Conócenos!</a>
+              <a class="nav-link" href="conocenos.html">¡Conócenos!</a>
             </li>
             <li class="nav-item ml-3">
-              <a class="nav-link " href="#" tabindex="-1" aria-disabled="true"
+              <a class="nav-link " href="catalogo.html" tabindex="-1" aria-disabled="true"
                 >Nuestros Pasteles</a
               >
             </li>
@@ -66,75 +67,67 @@
     </nav>
     <!-- /header -->
     <!-- main -->
-    <section id="pasteleros">
+    <main>
       <div class="container">
-        <div class="row mt-2 text-center">
-          <div class="col">
-            <small>Conoce a</small>
-            <h2>nuestros pasteleros</h2>
-          </div>
-        </div>
         <div class="row text-center">
-          <div class=" offset-lg-2 col-lg-4 col-md-6 mb-2">
-            <div class="card" >
-              <img src="./img/inge.jpg" class="card-img-top" alt="pastelero img" />
-              <div class="card-body">
-                <h5 class="card-title">Javi Lopez</h5>
-                <p class="card-text">
-                  Pastelero desde los 15 años, capaz de hacerte el mejor 
-                  pastel imposible con los ojos cerrados.
-                </p>
-                <a href="#" class="btn btn-primary">Visita su facebook</a>
-              </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-2">
-            <div class="card" >
-              <img src="./img/julio.jpg" class="card-img-top" alt="pastelero img" />
-              <div class="card-body">
-                <h5 class="card-title">Julio Zuñiga</h5>
-                <p class="card-text">
-                  Creció en un barrio lejano donde los pasteleros entrenan con
-                  tigres, si necesitas un pastel el lo hace.
-                </p>
-                <a href="#" class="btn btn-primary">Visita su facebook</a>
-              </div>
-            </div>
-            </div>
-            <div class="offset-lg-2 col-lg-4 col-md-6 mb-2">
-            <div class="card" >
-              <img src="./img/hunny.jpg" class="card-img-top" alt="pastelero img" />
-              <div class="card-body">
-                <h5 class="card-title">Zitlaly Círigo</h5>
-                <p class="card-text">
-                  Un mounstruo haciendo pasteles, si lo necesitas
-                  ella lo hace.
-                </p>
-                <a href="#" class="btn btn-primary">Visita su facebook</a>
-              </div>
-            </div>
-            </div>
-            <div class=" col-lg-4 col-md-6 mb-2"">
-            <div class="card" >
-              <img src="./img/fer.jpeg" class="card-img-top" alt="pastelero img" />
-              <div class="card-body">
-                <h5 class="card-title">Fernando Saavedra</h5>
-                <p class="card-text">
-                  que su apariencia no te engañe, es el mejor pastelero de la costa 
-                  oeste.
-                </p>
-                <a href="#" class="btn btn-primary">Visita su facebook</a>
-              </div>
-            </div>
-            </div>  
+          <div class="offset-lg-3 col-lg-6 mt-3">
+            <small>Registro de</small>
+            <h2>Usuario</h2>
           </div>
         </div>
-    </section>
+      </div>
+      <form>
+        <div class="row m-2 align-middle">
+          <div class="offset-lg-3 col-lg-6 mt-3">
+            <label for="nombre">Nombres</label>
+          </div>
+          <div class="offset-lg-3 col-lg-6 mt-3">
+            <input
+              type="text"
+              id="nombre"
+              name="nombre"
+              class="form-control"
+              placeholder="Nombres"
+            />
+          </div>
+          <div class="offset-lg-3 col-lg-6 mt-3">
+            <label for="nombre">Apellido</label>
+          </div>
+          <div class="offset-lg-3 col-lg-6 mt-3">
+            <input type="text" class="form-control" placeholder="Apellidos" />
+          </div>
+          <div class="offset-lg-3 col-lg-6 mt-3">
+            <label for="nombre">Usuario</label>
+          </div>
+          <div class="offset-lg-3 col-lg-6 mt-3">
+            <input type="text" class="form-control" placeholder="Usuario" />
+          </div>
+		  <div class="offset-lg-3 col-lg-6 mt-3">
+            <label for="nombre">Usuario</label>
+          </div>
+		  <div class="offset-lg-3 col-lg-6 mt-3">
+            <input type="text" class="form-control" placeholder="contraseña" />
+          </div>
+          <div class="offset-lg-3 col-lg-6 mt-3">
+            <label for="nombre">Sexo</label>
+          </div>
+          <div class="offset-lg-3 col-lg-6 mt-3">
+            <select name="" id="">
+              <option value="Hombre">Hombre</option>
+              <option value="Mujer">Mujer</option>
+            </select>
+          </div>
+          <div class="offset-lg-3 col-lg-6 mt-3 text-center" >
+            <button type="submit" class="btn btn-primary">Registrarse</button>
+          </div>
+        </div>
+      </form>
+    </main>
     <!-- /main -->
     <!-- footer -->
     <footer id="footer" class="pb-3 pt-3">
       <div class="container">
-        <div class="row text-center">
+        <div class="row text-center ">
           <div class="col-12 col-lg">
             <a href="#" -12>Preguntas frecuentes</a>
           </div>
