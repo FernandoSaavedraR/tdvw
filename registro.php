@@ -1,3 +1,19 @@
+<?php
+include conexion.php;
+function f()
+{
+  if(isset($_POST["nombre"]) && isset($_POST["apellidos"]) && isset($_POST["usuario"])&& isset($_POST["pass"]) && isset($_POST["sexo"]))
+    {
+      $NOMBRE = 
+      $con = new baseDatos();
+      $con -> insertar("CALL ALTA_CLIENTE(\"\") ");
+    }
+    else
+    {
+      cout "llena todos lops campos para realizar tu registro";
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -76,7 +92,7 @@
           </div>
         </div>
       </div>
-      <form>
+      <form method="POST" action="registro.php">
         <div class="row m-2 align-middle">
           <div class="offset-lg-3 col-lg-6 mt-3">
             <label for="nombre">Nombres</label>
@@ -94,27 +110,39 @@
             <label for="nombre">Apellido</label>
           </div>
           <div class="offset-lg-3 col-lg-6 mt-3">
-            <input type="text" class="form-control" placeholder="Apellidos" />
+            <input
+              type="text"
+              name="apellidos"
+              class="form-control"
+              placeholder="Apellidos" />
           </div>
           <div class="offset-lg-3 col-lg-6 mt-3">
             <label for="nombre">Usuario</label>
           </div>
           <div class="offset-lg-3 col-lg-6 mt-3">
-            <input type="text" class="form-control" placeholder="Usuario" />
+            <input
+              type="text"
+              name="usuario"
+              class="form-control"
+              placeholder="Usuario" />
           </div>
 		  <div class="offset-lg-3 col-lg-6 mt-3">
             <label for="nombre">Usuario</label>
           </div>
 		  <div class="offset-lg-3 col-lg-6 mt-3">
-            <input type="text" class="form-control" placeholder="contraseña" />
+            <input
+              type="text"
+              name="pass"
+              class="form-control"
+              placeholder="contraseña" />
           </div>
           <div class="offset-lg-3 col-lg-6 mt-3">
             <label for="nombre">Sexo</label>
           </div>
           <div class="offset-lg-3 col-lg-6 mt-3">
-            <select name="" id="">
-              <option value="Hombre">Hombre</option>
-              <option value="Mujer">Mujer</option>
+            <select name="sexo" id="">
+              <option value="1">Hombre</option>
+              <option value="0">Mujer</option>
             </select>
           </div>
           <div class="offset-lg-3 col-lg-6 mt-3 text-center" >
@@ -125,19 +153,7 @@
     </main>
     <!-- /main -->
     <!-- footer -->
-    <footer id="footer" class="pb-3 pt-3">
-      <div class="container">
-        <div class="row text-center ">
-          <div class="col-12 col-lg">
-            <a href="#" -12>Preguntas frecuentes</a>
-          </div>
-          <div class="col-12 col-lg">
-            <a href="#" -12>Contactanos</a>
-          </div>
-          <div class="col-12 col-lg">Derechos reservados Inges Inc &copy</div>
-        </div>
-      </div>
-    </footer>
+
     <!-- /footer -->
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
