@@ -1,18 +1,19 @@
 <?php
-include conexion.php;
-function f()
-{
-  if(isset($_POST["nombre"]) && isset($_POST["apellidos"]) && isset($_POST["usuario"])&& isset($_POST["pass"]) && isset($_POST["sexo"]))
-    {
-      $NOMBRE = 
-      $con = new baseDatos();
-      $con -> insertar("CALL ALTA_CLIENTE(\"\") ");
-    }
-    else
-    {
-      cout "llena todos lops campos para realizar tu registro";
-    }
-}
+      //
+      if(isset($_POST["nombre"]) && isset($_POST["apellidos"]) && isset($_POST["usuario"])&& isset($_POST["pass"]) && isset($_POST["sexo"])){
+        include ("conexion.php");
+        $NOMBRE =$_POST["nombre"];
+        $APELLIDOS=$_POST["apellidos"];
+        $SEXO = $_POST["sexo"];
+        $USUARIO = $_POST["usuario"];
+        $PASS = $_POST["pass"];
+        $conn = new baseDatos();
+        $conn->insertar("CALL  ALTA_CLIENTE('$NOMBRE','$APELLIDOS',$SEXO,'$USUARIO','$PASS')");
+      }
+      //$con -> insertar("CALL  ALTA_CLIENTE('$NOMBRE','$APELLIDOS',$SEXO,'$USUARIO','$PASS')");
+      //cho "CALL  ALTA_CLIENTE('$NOMBRE','$APELLIDOS',$SEXO,'$USUARIO','$PASS')";
+
+
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -92,7 +93,7 @@ function f()
           </div>
         </div>
       </div>
-      <form method="POST" action="registro.php">
+      <form method="POST">
         <div class="row m-2 align-middle">
           <div class="offset-lg-3 col-lg-6 mt-3">
             <label for="nombre">Nombres</label>
@@ -150,6 +151,7 @@ function f()
           </div>
         </div>
       </form>
+
     </main>
     <!-- /main -->
     <!-- footer -->

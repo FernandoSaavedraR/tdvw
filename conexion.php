@@ -12,7 +12,7 @@
 					$this->user="root";
 					$this->pass ="n0m3l0";
 					$this->bd="tartedelavie";
-					$this->servidor="localhost";
+					$this->servidor="127.0.0.1:3306";
 			}
 			public function conectar()
 			{
