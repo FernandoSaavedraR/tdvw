@@ -5,13 +5,13 @@
 			private $usuario;
 			private $pass;
 			private $bd;
-			private $server;
-			
+			private $servidor;
+
 			public function __construct()
 			{
 					$this->user="root";
 					$this->pass ="n0m3l0";
-					$this->bd="mapamundi";
+					$this->bd="tartedelavie";
 					$this->servidor="localhost";
 			}
 			public function conectar()
@@ -19,23 +19,23 @@
 				$mysql = new mysqli($this->servidor,$this->user,$this->pass,$this->bd);
 				return $mysql;
 			}
-			public function insertar($nombre,$apellidos,$correo)
+			public function insertar($quert)
 			{
 				$con = $this->conectar();
-				$quert="INSERT INTO USERS(NOMBRE,APELLIDOS,EMAIL) VALUES(\"$nombre\",\"$apellidos\",\"$correo\")";
 				$con->query($quert);
 				mysqli_close($con);
 			}
-			public function consultar()
+			public function consultar($quert)
 			{
 				$con = $this->conectar();
-				$resultados = $con->query("select*from paises;");
-				foreach($resultados as $r)
-				{
-					echo $r["pais"]." ".$r["continente"]."<br>";
-				}
+				$resultados = $con->query($quert);
+				// foreach($resultados as $r)
+				// {
+				// 	echo $r["pais"]." ".$r["continente"]."<br>";
+				// }
 				mysqli_close($con);
-				
+				return $resultados;
+
 			}
 			public function cambiar($nombre,$apellidos,$correo,$noma,$apa,$cora)
 			{
@@ -51,8 +51,7 @@
 				$con->query($quert);
 				mysqli_close($con);
 			}
-			
-		}
-		
-?>
 
+		}
+
+?>
