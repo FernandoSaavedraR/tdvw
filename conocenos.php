@@ -34,22 +34,22 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active ml-3">
-              <a class="nav-link" href="./index.html"
+              <a class="nav-link" href="./index.php"
                 >Home <span class="sr-only">(current)</span></a
               >
             </li>
             <li class="nav-item ml-3">
-              <a class="nav-link" href="./conocenos.html">¡Conócenos!</a>
+              <a class="nav-link" href="./conocenos.php">¡Conócenos!</a>
             </li>
             <li class="nav-item ml-3">
-              <a class="nav-link " href="catalogo.html" tabindex="-1" aria-disabled="true"
+              <a class="nav-link " href="catalogo.php" tabindex="-1" aria-disabled="true"
                 >Nuestros Pasteles</a
               >
             </li>
             <li class="nav-item ml-3">
               <a
                 class="nav-link resaltado"
-                href="registro.html"
+                href="registro.php"
                 tabindex="-1"
                 aria-disabled="true"
                 >Registrate</a
@@ -81,7 +81,7 @@
               <div class="card-body">
                 <h5 class="card-title">Javi Lopez</h5>
                 <p class="card-text">
-                  Pastelero desde los 15 años, capaz de hacerte el mejor 
+                  Pastelero desde los 15 años, capaz de hacerte el mejor
                   pastel imposible con los ojos cerrados.
                 </p>
                 <a href="#" class="btn btn-primary">Visita su facebook</a>
@@ -120,13 +120,13 @@
               <div class="card-body">
                 <h5 class="card-title">Fernando Saavedra</h5>
                 <p class="card-text">
-                  que su apariencia no te engañe, es el mejor pastelero de la costa 
+                  que su apariencia no te engañe, es el mejor pastelero de la costa
                   oeste.
                 </p>
                 <a href="#" class="btn btn-primary">Visita su facebook</a>
               </div>
             </div>
-            </div>  
+            </div>
           </div>
         </div>
     </section>

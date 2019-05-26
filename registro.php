@@ -1,5 +1,4 @@
 <?php
-      //
       if(isset($_POST["nombre"]) && isset($_POST["apellidos"]) && isset($_POST["usuario"])&& isset($_POST["pass"]) && isset($_POST["sexo"])){
         include ("conexion.php");
         $NOMBRE =$_POST["nombre"];
@@ -10,9 +9,6 @@
         $conn = new baseDatos();
         $conn->insertar("CALL  ALTA_CLIENTE('$NOMBRE','$APELLIDOS',$SEXO,'$USUARIO','$PASS')");
       }
-      //$con -> insertar("CALL  ALTA_CLIENTE('$NOMBRE','$APELLIDOS',$SEXO,'$USUARIO','$PASS')");
-      //cho "CALL  ALTA_CLIENTE('$NOMBRE','$APELLIDOS',$SEXO,'$USUARIO','$PASS')";
-
 
 ?>
 <!DOCTYPE html>
@@ -52,29 +48,29 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active ml-3">
-              <a class="nav-link" href="index.html"
+              <a class="nav-link" href="index.php"
                 >Home <span class="sr-only">(current)</span></a
               >
             </li>
             <li class="nav-item ml-3">
-              <a class="nav-link" href="conocenos.html">¡Conócenos!</a>
+              <a class="nav-link" href="conocenos.php">¡Conócenos!</a>
             </li>
             <li class="nav-item ml-3">
-              <a class="nav-link " href="#" tabindex="-1" aria-disabled="true"
+              <a class="nav-link " href="catalogo.php" tabindex="-1" aria-disabled="true"
                 >Nuestros Pasteles</a
               >
             </li>
             <li class="nav-item ml-3">
               <a
                 class="nav-link resaltado"
-                href="registro.html"
+                href="registro.php"
                 tabindex="-1"
                 aria-disabled="true"
                 >Registrate</a
               >
             </li>
             <li class="nav-item ml-3">
-              <button type="button" class="btn btn-success" onclick="location.href='login.html'">
+              <button type="button" class="btn btn-success" onclick="location.href='login.php'">
                 Iniciar sesión
               </button>
             </li>
@@ -128,11 +124,11 @@
               placeholder="Usuario" />
           </div>
 		  <div class="offset-lg-3 col-lg-6 mt-3">
-            <label for="nombre">Usuario</label>
+            <label for="nombre">Contraseña</label>
           </div>
 		  <div class="offset-lg-3 col-lg-6 mt-3">
             <input
-              type="text"
+              type="password"
               name="pass"
               class="form-control"
               placeholder="contraseña" />

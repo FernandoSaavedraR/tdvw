@@ -22,19 +22,19 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active ml-3">
-            <a class="nav-link" href="./index.html">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="./index.php">Home <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item ml-3">
-            <a class="nav-link" href="./conocenos.html">¡Conócenos!</a>
+            <a class="nav-link" href="./conocenos.php">¡Conócenos!</a>
           </li>
           <li class="nav-item ml-3">
             <a class="nav-link " href="#" tabindex="-1" aria-disabled="true">Nuestros Pasteles</a>
           </li>
           <li class="nav-item ml-3">
-            <a class="nav-link resaltado" href="registro.html" tabindex="-1" aria-disabled="true">Registrate</a>
+            <a class="nav-link resaltado" href="registro.php" tabindex="-1" aria-disabled="true">Registrate</a>
           </li>
           <li class="nav-item ml-3">
-            <button type="button" class="btn btn-success" onclick="location.href='login.html'">
+            <button type="button" class="btn btn-success" onclick="location.href='login.php'">
               Iniciar sesión
             </button>
           </li>

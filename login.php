@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="es" dir="ltr">
   <head>
     <meta charset="utf-8">
     <title>Form login | Fazt</title>
@@ -32,29 +31,29 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active ml-3">
-              <a class="nav-link" href="./index.html"
+              <a class="nav-link" href="./index.php"
                 >Home <span class="sr-only">(current)</span></a
               >
             </li>
             <li class="nav-item ml-3">
-              <a class="nav-link" href="./conocenos.html">¡Conócenos!</a>
+              <a class="nav-link" href="./conocenos.php">¡Conócenos!</a>
             </li>
             <li class="nav-item ml-3">
-              <a class="nav-link " href="catalogo.html" tabindex="-1" aria-disabled="true"
+              <a class="nav-link " href="catalogo.php" tabindex="-1" aria-disabled="true"
                 >Nuestros Pasteles</a
               >
             </li>
             <li class="nav-item ml-3">
               <a
                 class="nav-link resaltado"
-                href="registro.html"
+                href="registro.php"
                 tabindex="-1"
                 aria-disabled="true"
                 >Registrate</a
               >
             </li>
             <li class="nav-item ml-3">
-              <button type="button" class="btn btn-success" onclick="location.href='login.html'">
+              <button type="button" class="btn btn-success" onclick="location.href='login.php'">
                 Iniciar sesión
               </button>
             </li>
@@ -67,19 +66,19 @@
 		<div class="login-box row ">
 			<img class="logo" src="img/descarga.jpg" alt="logo de fondo">
 			<h1>Inicia Sesión</h1>
-			<form>
+			<form id="formulario">
 			  <label for="username">Usuario</label>
-			  <input type="text" placeholder="&#9787;Usuario">
+			  <input type="text" name="usuario" placeholder="&#9787;Usuario">
 
 			  <label for="password">Contraseña</label>
-			  <input type="password" placeholder="&#128273;Contraseña">
+			  <input type="password" name="pass" placeholder="&#128273;Contraseña">
 
-			  <input type="submit" value="Login in"><br/>
+			  <input type="submit" id="login" value="Login in"><br/>
 
-			  <a href="#">Crear una cuenta</a>
+			  
 		 </div>
     </div>
-	
+  
 	<script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
       integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -95,5 +94,7 @@
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"
     ></script>
+    <script src="./js/login.js"></script>
+    
   </body>
 </html>

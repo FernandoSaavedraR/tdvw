@@ -49,5 +49,13 @@
 				$con->query($quert);
 				mysqli_close($con);
 			}
+			public function sesion($user, $pass){
+				$con = $this->conectar();
+				$quert = "call login(\"$user\",\"$pass\");";
+				$resultados = $con->query($quert);
+				return $resultados;
+				mysqli_close($con);
+				
+			}
 		}
 ?>
