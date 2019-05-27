@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link
       rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      href="./bootstrap/css/bootstrap.min.css"  
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
@@ -16,14 +16,7 @@
 
   <body>
     <!-- header -->
-    <?php
-       session_start();
-      if($_SESSION['sesion']==1){
-        echo "bienvenido ".$_SESSION['usr'];
-      }else{
-        echo "no hay sesion :(";
-      }
-    ?>
+
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container">
         <a class="navbar-brand" href="#">Navbar</a>
@@ -55,19 +48,54 @@
               >
             </li>
             <li class="nav-item ml-3">
-              <a
-                class="nav-link resaltado"
-                href="registro.php"
-                tabindex="-1"
-                aria-disabled="true"
-                >Registrate</a
-              >
+            <?php
+              $template;
+                session_start();
+                if($_SESSION['sesion']==1)
+                {
+                  $template = '<a
+                  class="nav-link resaltado"
+                  href="#"
+                  tabindex="-1"
+                  aria-disabled="true"
+                  >¡tu Perfil '.$_SESSION["usr"].'!</a
+                  >';
+                  echo $template;
+                }else{
+                  $template = '<a
+                  class="nav-link resaltado"
+                  href="registro.php"
+                  tabindex="-1"
+                  aria-disabled="true"
+                  >Registrate</a
+                  >';
+                  echo $template;
+                }
+           
+              
+            ?>
             </li>
             <li class="nav-item ml-3">
-              <button type="button" class="btn btn-success" onclick="location.href='login.php'">
-                Iniciar sesión
-              </button>
-            </li>
+              
+            <?php
+              $template;
+                session_start();
+                if($_SESSION['sesion']==1)
+                {
+                  $template = '<button type="button" class="btn btn-success" 
+                  onclick="location.href=\'logout.php\'">
+                  cerrar sesión
+                  </button>';
+                  echo $template;
+                }else{
+                  $template = '<button type="button" class="btn btn-success" 
+                  onclick="location.href=\'login.php\'">
+                  Iniciar sesión
+                  </button>';
+                  echo $template;
+                }
+            ?>
+              
           </ul>
         </div>
       </div>
@@ -85,7 +113,7 @@
         <div class="row text-center">
           <div class=" offset-lg-2 col-lg-4 col-md-6 mb-2">
             <div class="card" >
-              <img src="./img/inge.jpg" class="card-img-top" alt="pastelero img" />
+              <img src="./img/inge.jpg" class="card-img-top p-1" alt="pastelero img" />
               <div class="card-body">
                 <h5 class="card-title">Javi Lopez</h5>
                 <p class="card-text">
@@ -98,7 +126,7 @@
             </div>
             <div class="col-lg-4 col-md-6 mb-2">
             <div class="card" >
-              <img src="./img/julio.jpg" class="card-img-top" alt="pastelero img" />
+              <img src="./img/julio.jpg" class="card-img-top p-1" alt="pastelero img" />
               <div class="card-body">
                 <h5 class="card-title">Julio Zuñiga</h5>
                 <p class="card-text">
@@ -111,7 +139,7 @@
             </div>
             <div class="offset-lg-2 col-lg-4 col-md-6 mb-2">
             <div class="card" >
-              <img src="./img/hunny.jpg" class="card-img-top" alt="pastelero img" />
+              <img src="./img/hunny.jpg" class="card-img-top p-1" alt="pastelero img" />
               <div class="card-body">
                 <h5 class="card-title">Zitlaly Círigo</h5>
                 <p class="card-text">
@@ -124,7 +152,7 @@
             </div>
             <div class=" col-lg-4 col-md-6 mb-2"">
             <div class="card" >
-              <img src="./img/fer.jpeg" class="card-img-top" alt="pastelero img" />
+              <img src="./img/fer.jpeg" class="card-img-top p-1" alt="pastelero img" />
               <div class="card-body">
                 <h5 class="card-title">Fernando Saavedra</h5>
                 <p class="card-text">

@@ -18,9 +18,11 @@ main .carousel-inner img{
     object-fit: cover;
     filter:grayscale(70%);
 }
-#pasteleros img{
-    height: 400px;
+.card-img-top{
+    height: 300px;
+    
     object-fit: cover;
+    
 }
 footer{
    

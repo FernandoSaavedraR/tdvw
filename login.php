@@ -4,7 +4,7 @@
     <title>Form login | Fazt</title>
 	 <link
       rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      href="./bootstrap/css/bootstrap.min.css"
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
@@ -12,13 +12,30 @@
       <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   </head>
   <body>
+  
+  <div class="container ">
+		<div class="login-box row ">
+			<img class="logo" src="img/descarga.jpg" alt="logo de fondo">
+			<h1>Inicia Sesión</h1>
+			<form id="formulario">
+			  <label for="username">Usuario</label>
+			  <input type="text" name="usuario" placeholder="&#9787;Usuario">
+
+			  <label for="password">Contraseña</label>
+			  <input type="password" name="pass" placeholder="&#128273;Contraseña">
+
+			  <input type="submit" id="login" value="Login in"><br/>
+
+			  
+		 </div>
+    </div>
   <!-- header -->
   <?php
        session_start();
       if($_SESSION['sesion']==1){
-        echo "bienvenido ".$_SESSION['usr'];
+        header("location:./index.php");
       }else{
-        echo "no hay sesion :(";
+        
       }
     ?>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -70,23 +87,6 @@
       </div>
     </nav>
     <!-- /header -->
-  <div class="container ">
-		<div class="login-box row ">
-			<img class="logo" src="img/descarga.jpg" alt="logo de fondo">
-			<h1>Inicia Sesión</h1>
-			<form id="formulario">
-			  <label for="username">Usuario</label>
-			  <input type="text" name="usuario" placeholder="&#9787;Usuario">
-
-			  <label for="password">Contraseña</label>
-			  <input type="password" name="pass" placeholder="&#128273;Contraseña">
-
-			  <input type="submit" id="login" value="Login in"><br/>
-
-			  
-		 </div>
-    </div>
-  
 	<script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
       integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -102,6 +102,7 @@
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
     <script src="./js/login.js"></script>
     
   </body>

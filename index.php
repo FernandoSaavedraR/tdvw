@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link
       rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      href="./bootstrap/css/bootstrap.min.css"
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
@@ -110,24 +110,19 @@
         data-ride="carousel"
         data-pause="false"
       >
-        <div class="carousel-inner">
+        <div class="carousel-inner p-1">
+          
           <div class="carousel-item active">
-            <img src="./img/im1.jpg" class="d-block w-100" alt="img-crsl" />
+            <img src="./img/f1.jpg" class="d-block w-100" alt="img-crsl" />
           </div>
           <div class="carousel-item">
-            <img src="./img/im2.png" class="d-block w-100" alt="img-crsl" />
+            <img src="./img/ff.jpg" class="d-block w-100" alt="img-crsl" />
           </div>
           <div class="carousel-item">
-            <img src="./img/im3.jpg" class="d-block w-100" alt="img-crsl" />
+            <img src="./img/imposible.jpg" class="d-block w-100" alt="img-crsl" />
           </div>
           <div class="carousel-item">
-            <img src="./img/im4.png" class="d-block w-100" alt="img-crsl" />
-          </div>
-          <div class="carousel-item">
-            <img src="./img/im5.jpg" class="d-block w-100" alt="img-crsl" />
-          </div>
-          <div class="carousel-item">
-            <img src="./img/im6.jpg" class="d-block w-100" alt="img-crsl" />
+            <img src="./img/tresl.jpg" class="d-block w-100" alt="img-crsl" />
           </div>
         </div>
         <a

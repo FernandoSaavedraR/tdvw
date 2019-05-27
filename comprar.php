@@ -20,9 +20,11 @@
             height:100%;
             width:100%;
             display:flex;
+            flex-direction:column;
             justify-content: center;
             align-items: center;
             transition: all 1s ease;
+            color:#f4266a;
         }
         #carga{
             border:15px solid #ccc;
@@ -42,13 +44,15 @@
 <body>
     <div id="contenedor_carga">
         <div id="carga"></div>
+        <h1>Comprando</h1>
     </div>
+    <h1></h1>
     <script>
         (async function cerrar(){
         //console.log(event)
         const data = new FormData(document.getElementById('formulario'));
-        const sesion = await fetch('./ssesion.php')
-        location.href ="./index.php"
+        const sesion = await fetch('./compra.php')
+        //location.href ="./index.php"
         })();
     </script>
 </body>

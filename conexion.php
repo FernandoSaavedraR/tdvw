@@ -57,5 +57,12 @@
 				mysqli_close($con);
 				
 			}
+			public function c_Producto(){
+				$con = $this->conectar();
+				$quert = "select * from producto";
+				$resultados = $con->query($quert);
+				return $resultados;
+				mysqli_close($con);
+			}
 		}
 ?>
