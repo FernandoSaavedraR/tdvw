@@ -16,6 +16,14 @@
 
   <body>
     <!-- header -->
+    <?php
+       session_start();
+      if($_SESSION['sesion']==1){
+        echo "bienvenido ".$_SESSION['usr'];
+      }else{
+        echo "no hay sesion :(";
+      }
+    ?>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container">
         <a class="navbar-brand" href="#">Navbar</a>
@@ -56,7 +64,7 @@
               >
             </li>
             <li class="nav-item ml-3">
-              <button type="button" class="btn btn-success" onclick="location.href='login.html'">
+              <button type="button" class="btn btn-success" onclick="location.href='login.php'">
                 Iniciar sesión
               </button>
             </li>

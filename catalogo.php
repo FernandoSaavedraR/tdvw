@@ -12,6 +12,14 @@
 
 <body>
   <!-- header -->
+  <?php
+       session_start();
+      if($_SESSION['sesion']==1){
+        echo "bienvenido ".$_SESSION['usr'];
+      }else{
+        echo "no hay sesion :(";
+      }
+    ?>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
       <a class="navbar-brand" href="#">Navbar</a>

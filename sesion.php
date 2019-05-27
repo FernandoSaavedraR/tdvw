@@ -4,7 +4,7 @@
     $usr = $_POST["usuario"];
     $pass = $_POST["pass"];
     $json_array = array();
-    $var = $conexion->sesion($usr,$psw);
+    $var = $conexion->sesion($usr,$pass);
     foreach($var as $r){
         $json_array = $r;
     }
@@ -15,7 +15,6 @@
     }else{
         
     }
-
     echo json_encode($json_array);
    
    

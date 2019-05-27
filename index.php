@@ -16,14 +16,7 @@
 
   <body>
     <!-- header -->
-    <?php
-       session_start();
-      if($_SESSION['sesion']==1){
-        echo "bienvenido ".$_SESSION['usr'];
-      }else{
-        echo "no hay sesion";
-      }
-    ?>
+    
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container">
         <a class="navbar-brand" href="#">Navbar</a>
@@ -55,18 +48,54 @@
               >
             </li>
             <li class="nav-item ml-3">
-              <a
-                class="nav-link resaltado"
-                href="registro.php"
-                tabindex="-1"
-                aria-disabled="true"
-                >Registrate</a
-              >
+            <?php
+              $template;
+                session_start();
+                if($_SESSION['sesion']==1)
+                {
+                  $template = '<a
+                  class="nav-link resaltado"
+                  href="#"
+                  tabindex="-1"
+                  aria-disabled="true"
+                  >¡tu Perfil '.$_SESSION["usr"].'!</a
+                  >';
+                  echo $template;
+                }else{
+                  $template = '<a
+                  class="nav-link resaltado"
+                  href="registro.php"
+                  tabindex="-1"
+                  aria-disabled="true"
+                  >Registrate</a
+                  >';
+                  echo $template;
+                }
+           
+              
+            ?>
             </li>
             <li class="nav-item ml-3">
-              <button type="button" class="btn btn-success" onclick="location.href='login.php'">
-                Iniciar sesión
-              </button>
+              
+            <?php
+              $template;
+                session_start();
+                if($_SESSION['sesion']==1)
+                {
+                  $template = '<button type="button" class="btn btn-success" 
+                  onclick="location.href=\'logout.php\'">
+                  cerrar sesión
+                  </button>';
+                  echo $template;
+                }else{
+                  $template = '<button type="button" class="btn btn-success" 
+                  onclick="location.href=\'login.php\'">
+                  Iniciar sesión
+                  </button>';
+                  echo $template;
+                }
+            ?>
+              
             </li>
           </ul>
         </div>
