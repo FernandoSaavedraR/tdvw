@@ -1,13 +1,15 @@
 <?php
-      if(isset($_POST["nombre"]) && isset($_POST["apellidos"]) && isset($_POST["usuario"])&& isset($_POST["pass"]) && isset($_POST["sexo"])){
+      if(isset($_POST["nombre"]) && isset($_POST["apellidos"]) && isset($_POST["usuario"])&& isset($_POST["pass"]) && isset($_POST["sexo"]) && isset($_POST["direccion"])){
         include ("conexion.php");
         $NOMBRE =$_POST["nombre"];
         $APELLIDOS=$_POST["apellidos"];
         $SEXO = $_POST["sexo"];
         $USUARIO = $_POST["usuario"];
         $PASS = $_POST["pass"];
+        $dir = $_POST["direccion"];
         $conn = new baseDatos();
-        $conn->insertar("CALL  ALTA_CLIENTE('$NOMBRE','$APELLIDOS',$SEXO,'$USUARIO','$PASS')");
+        $quert = "CALL  ALTA_CLIENTE('$NOMBRE','$APELLIDOS',$SEXO,'$USUARIO','$PASS','$dir')";
+        $conn->insertar($quert);
       }
 
 ?>
@@ -111,40 +113,54 @@
             />
           </div>
           <div class="offset-lg-3 col-lg-6 mt-3">
-            <label for="nombre">Apellido</label>
+            <label for="apellidos">Apellido</label>
           </div>
           <div class="offset-lg-3 col-lg-6 mt-3">
             <input
               type="text"
+              id="apellidos"
               name="apellidos"
               class="form-control"
               placeholder="Apellidos" />
           </div>
           <div class="offset-lg-3 col-lg-6 mt-3">
-            <label for="nombre">Usuario</label>
+            <label for="direccion">Direccion</label>
           </div>
           <div class="offset-lg-3 col-lg-6 mt-3">
             <input
               type="text"
+              id="direccion"
+              name="direccion"
+              class="form-control"
+              placeholder="Direccion" />
+          </div>
+          <div class="offset-lg-3 col-lg-6 mt-3">
+            <label for="usuario">Usuario</label>
+          </div>
+          <div class="offset-lg-3 col-lg-6 mt-3">
+            <input
+              type="text"
+              id="usuario"
               name="usuario"
               class="form-control"
               placeholder="Usuario" />
           </div>
 		  <div class="offset-lg-3 col-lg-6 mt-3">
-            <label for="nombre">Contraseña</label>
+            <label for="pass">Contraseña</label>
           </div>
 		  <div class="offset-lg-3 col-lg-6 mt-3">
             <input
+              id="pass"
               type="password"
               name="pass"
               class="form-control"
               placeholder="contraseña" />
           </div>
           <div class="offset-lg-3 col-lg-6 mt-3">
-            <label for="nombre">Sexo</label>
+            <label for="sexo">Sexo</label>
           </div>
           <div class="offset-lg-3 col-lg-6 mt-3">
-            <select name="sexo" id="">
+            <select id="sexo" name="sexo" id="">
               <option value="1">Hombre</option>
               <option value="0">Mujer</option>
             </select>

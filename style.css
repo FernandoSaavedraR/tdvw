@@ -37,3 +37,6 @@ nav{
 main{
     width: 100%;
 }
+.s-modal{
+    display:block;
+}
