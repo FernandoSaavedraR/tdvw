@@ -159,4 +159,17 @@ BEGIN
 		INSERT INTO TARJETA (NUMERO,CVV,BANCO,FONDOS) VALUES (NUMEROS,CVVV,BANCOS,CAST(RAND()*1000 AS INT));
 		INSERT INTO REL_TARJETA_USUARIO (ID_TARJETA,ID_USUARIO) VALUES (LAST_INSERT_ID(),ID_P);
 	END IF;
-END
+END //
+
+DELIMITER ;
+DROP PROCEDURE IF EXISTS CONS_USR;
+DELIMITER //
+CREATE PROCEDURE CONS_USR(USR VARCHAR(40))
+BEGIN
+	select nombre,apellidos,usuario,contrasena,direccion,numero,cvv,banco,sexo from persona 
+	inner join usuario on persona.id_persona = usuario.id_persona
+	inner join rel_dir_persona on rel_dir_persona.id_persona = persona.id_persona
+	inner join direcciones on rel_dir_persona.id_direccion = direcciones.id_direccion
+	left join rel_tarjeta_usuario on rel_tarjeta_usuario.id_usuario = usuario.id_usuario
+	left join tarjeta on rel_tarjeta_usuario.id_tarjeta = tarjeta.id_tarjeta where usr = usuario;
+END //

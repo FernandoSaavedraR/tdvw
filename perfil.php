@@ -158,13 +158,13 @@
             <label for="">Tarjeta</label>
             </div>
             <div class="col-4">
-              <input type="text" class="form-control" name="tarjeta" placeholder="tarjeta">
+              <input type="text" class="form-control" id="tarjeta" name="tarjeta" placeholder="tarjeta">
             </div>
             <div class="col-3">
-              <input type="text" class="form-control" name="caducidad" placeholder="Banco">
+              <input type="text" class="form-control" id="caducidad"name="caducidad" placeholder="Banco">
             </div>
             <div class="col-3">
-              <input type="text" class="form-control" name="cvv" placeholder="cvv">
+              <input type="text" class="form-control" id="cvv" name="cvv" placeholder="cvv">
             </div>
           </div>
           <div class="col-lg-5 mt-3 text-center" >

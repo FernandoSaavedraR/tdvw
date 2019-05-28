@@ -1,16 +1,22 @@
 <?php
-      if(isset($_POST["nombre"]) && isset($_POST["apellidos"]) && isset($_POST["usuario"])&& isset($_POST["pass"]) && isset($_POST["sexo"]) && isset($_POST["direccion"])){
-        include ("conexion.php");
-        $NOMBRE =$_POST["nombre"];
-        $APELLIDOS=$_POST["apellidos"];
-        $SEXO = $_POST["sexo"];
-        $USUARIO = $_POST["usuario"];
-        $PASS = $_POST["pass"];
-        $dir = $_POST["direccion"];
-        $conn = new baseDatos();
-        $quert = "CALL  ALTA_CLIENTE('$NOMBRE','$APELLIDOS',$SEXO,'$USUARIO','$PASS','$dir')";
-        $conn->insertar($quert);
-      }
+      if(isset($_POST["nombre"]) && isset($_POST["apellidos"]) && isset($_POST["usuario"])
+      && isset($_POST["pass"]) && isset($_POST["sexo"]) && isset($_POST["direccion"])
+      && isset($_POST["tarjeta"])&& isset($_POST["caducidad"])&& isset($_POST["cvv"])){
+          include("conexion.php");
+          $NOMBRE =$_POST["nombre"];
+          $APELLIDOS=$_POST["apellidos"];
+          $SEXO = $_POST["sexo"];
+          $USUARIO = $_POST["usuario"];
+          $PASS = $_POST["pass"];
+          $dir = $_POST["direccion"];
+          $tarjeta = $_POST["tarjeta"];
+          $banco = $_POST["caducidad"];
+          $cvv = $_POST["cvv"];
+          $conn = new baseDatos();
+          $quert = "CALL  ALTA_CLIENTE('$NOMBRE','$APELLIDOS',$SEXO,'$USUARIO','$PASS','$dir','$tarjeta',$cvv,'$banco')";
+          $resultados = $conn->insertar($quert);
+          
+      } 
 
 ?>
 <!DOCTYPE html>
@@ -165,12 +171,26 @@
               <option value="0">Mujer</option>
             </select>
           </div>
+          <div class="offset-lg-3 col-lg-6 mt-3">
+            <label for="">Tarjeta</label>
+            </div>
+            <div class="offset-lg-3 col-lg-6 mt-3">
+              <input type="text" class="form-control" id="tarjeta" name="tarjeta" placeholder="tarjeta">
+            </div>
+            <div class="offset-lg-3 col-3 mt-3">
+              <input type="text" class="form-control" id="caducidad"name="caducidad" placeholder="Banco">
+            </div>
+            <div class="col-3 mt-3">
+              <input type="text" class="form-control" id="cvv" name="cvv" placeholder="cvv">
+            </div>
+          </div>
           <div class="offset-lg-3 col-lg-6 mt-3 text-center" >
             <button type="submit" class="btn btn-primary">Registrarse</button>
           </div>
         </div>
+        
       </form>
-
+      
     </main>
     <!-- /main -->
     <!-- footer -->
@@ -191,5 +211,6 @@
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
   </body>
 </html>

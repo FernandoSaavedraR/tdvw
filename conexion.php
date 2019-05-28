@@ -21,7 +21,8 @@
 			public function insertar($quert)
 			{
 				$con = $this->conectar();
-				$con->query($quert);
+				$res=$con->query($quert);
+				return $res;
 				mysqli_close($con);
 			}
 			public function consultar($quert)
@@ -75,6 +76,13 @@
 				$quert = "CALL ACT_DATOS_TARJETA(\"$nombre\",\"$apellidos\",$sexo,\"$direccion\" ,\"$usr\",
 				\"$tarjeta\",$cvv,\"$caducidad\");";
 				$resultados = $con->query($quert);
+				mysqli_close($con);
+			}
+			public function llenar($usr){
+				$con = $this->conectar();
+				$quert = "call cons_usr(\"$usr\")";
+				$resultados = $con->query($quert);
+				return $resultados;
 				mysqli_close($con);
 			}
 		}
