@@ -51,25 +51,24 @@
             <?php
               $template;
                 session_start();
-                if($_SESSION['sesion']==1)
-                {
-                  $template = '<a
+                if ($_SESSION['sesion']==1) {
+                    $template = '<a
                   class="nav-link resaltado"
-                  href="./perfil.php"
+                  href="perfil.php"
                   tabindex="-1"
                   aria-disabled="true"
                   >¡tu Perfil '.$_SESSION["usr"].'!</a
                   >';
-                  echo $template;
-                }else{
-                  $template = '<a
+                    echo $template;
+                } else {
+                    $template = '<a
                   class="nav-link resaltado"
                   href="registro.php"
                   tabindex="-1"
                   aria-disabled="true"
                   >Registrate</a
                   >';
-                  echo $template;
+                    echo $template;
                 }
            
               
@@ -80,19 +79,18 @@
             <?php
               $template;
                 session_start();
-                if($_SESSION['sesion']==1)
-                {
-                  $template = '<button type="button" class="btn btn-success" 
+                if ($_SESSION['sesion']==1) {
+                    $template = '<button type="button" class="btn btn-success" 
                   onclick="location.href=\'logout.php\'">
                   cerrar sesión
                   </button>';
-                  echo $template;
-                }else{
-                  $template = '<button type="button" class="btn btn-success" 
+                    echo $template;
+                } else {
+                    $template = '<button type="button" class="btn btn-success" 
                   onclick="location.href=\'login.php\'">
                   Iniciar sesión
                   </button>';
-                  echo $template;
+                    echo $template;
                 }
             ?>
               
@@ -103,64 +101,91 @@
     </nav>
     <!-- /header -->
     <!-- main -->
-    <main>
-      <div
-        id="carouselExampleControls"
-        class="carousel slide "
-        data-ride="carousel"
-        data-pause="false"
-      >
-        <div class="carousel-inner p-1">
-          
-          <div class="carousel-item active">
-            <img src="./img/f1.jpg" class="d-block w-100" alt="img-crsl" />
+    <div class="container mt-4">
+      <div class="row">
+        <div class="col">
+                <h1>Tus datos Personales!</h1>
+                <hr />
+        </div>              
+      </div>
+      <form method="POST" id="formulario">
+        <div class="row m-2 align-middle">
+          <div class="col-2 mt-3">
+            <label for="nombre">Nombres</label>
           </div>
-          <div class="carousel-item">
-            <img src="./img/ff.jpg" class="d-block w-100" alt="img-crsl" />
+          <div class="col-10 mt-3">
+            <input
+              type="text"
+              id="nombre"
+              name="nombre"
+              class="form-control"
+              placeholder="Nombres"
+            />
           </div>
-          <div class="carousel-item">
-            <img src="./img/imposible.jpg" class="d-block w-100" alt="img-crsl" />
+          <div class="col-2 mt-3">
+            <label for="apellidos">Apellido</label>
           </div>
-          <div class="carousel-item">
-            <img src="./img/tresl.jpg" class="d-block w-100" alt="img-crsl" />
+          <div class="col-10 mt-3">
+            <input
+              type="text"
+              id="apellidos"
+              name="apellidos"
+              class="form-control"
+              placeholder="Apellidos" />
+          </div>
+          <div class="col-2 mt-3">
+            <label for="direccion">Direccion</label>
+          </div>
+          <div class="col-10 mt-3">
+            <input
+              type="text"
+              id="direccion"
+              name="direccion"
+              class="form-control"
+              placeholder="Direccion" />
+          </div>
+        
+          <div class="col-2 mt-3">
+            <label for="sexo">Sexo</label>
+          </div>
+          <div class="col-10 mt-3">
+            <select id="sexo" name="sexo" id="">
+              <option value="1">Hombre</option>
+              <option value="0">Mujer</option>
+            </select>
+          </div>
+            <div class="col-2 mt-3">
+            <label for="">Tarjeta</label>
+            </div>
+            <div class="col-4">
+              <input type="text" class="form-control" name="tarjeta" placeholder="tarjeta">
+            </div>
+            <div class="col-3">
+              <input type="text" class="form-control" name="caducidad" placeholder="Banco">
+            </div>
+            <div class="col-3">
+              <input type="text" class="form-control" name="cvv" placeholder="cvv">
+            </div>
+          </div>
+          <div class="col-lg-5 mt-3 text-center" >
+          <?php
+            $template = '<button type="submit" id="actualizar" data-usr="'.$_SESSION["usr"].'"class="btn btn-primary">Actualizar</button>';
+            echo $template;
+          ?>
           </div>
         </div>
-        <a
-          class="carousel-control-prev"
-          href="#carouselExampleControls"
-          role="button"
-          data-slide="prev"
-        >
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a
-          class="carousel-control-next"
-          href="#carouselExampleControls"
-          role="button"
-          data-slide="next"
-        >
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
+      </form>
       </div>
-    </main>
-    <!-- /main -->
-    <!-- footer -->
-    <footer id="footer" class="pb-3 pt-3">
-      <div class="container">
-        <div class="row text-center">
-          <div class="col-12 col-lg">
-            <a href="#" -12>Preguntas frecuentes</a>
-          </div>
-          <div class="col-12 col-lg">
-            <a href="#" -12>Contactanos</a>
-          </div>
-          <div class="col-12 col-lg">Derechos reservados Inges Inc &copy</div>
-        </div>
+      <div class="container mt-4">
+      <div class="row">
+        <div class="col">
+                <h1>Tus Pedidos!</h1>
+                <hr />
+        </div>              
       </div>
-    </footer>
-    <!-- /footer -->
+      </div>  
+    <!-- /main-->
+    <script src="./js/actualizar.js"></script>
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
       integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -176,5 +201,6 @@
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
   </body>
 </html>

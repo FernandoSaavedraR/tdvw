@@ -64,5 +64,19 @@
 				return $resultados;
 				mysqli_close($con);
 			}
+			public function act_datos($nombre,$apellidos,$direccion,$sexo,$usr){
+				$con = $this->conectar();
+				$quert = "Call ACT_DATOS(\"$nombre\",\"$apellidos\",$sexo,\"$direccion\" ,\"$usr\");";
+				$resultados = $con->query($quert);
+				mysqli_close($con);
+			}
+			public function act_datos_tarjeta($nombre,$apellidos,$direccion,$sexo,$usr,$tarjeta,$caducidad,$cvv){
+				$con = $this->conectar();
+				$quert = "CALL ACT_DATOS_TARJETA(\"$nombre\",\"$apellidos\",$sexo,\"$direccion\" ,\"$usr\",
+				\"$tarjeta\",$cvv,\"$caducidad\");";
+				$resultados = $con->query($quert);
+				mysqli_close($con);
+			}
 		}
 ?>
+

@@ -20,6 +20,7 @@
             height:100%;
             width:100%;
             display:flex;
+            flex-direction:column;
             justify-content: center;
             align-items: center;
             transition: all 1s ease;
@@ -42,6 +43,7 @@
 <body>
     <div id="contenedor_carga">
         <div id="carga"></div>
+        <h1>¡Hasta Luego! &#x1F60A;</h1>
     </div>
     <script>
         (async function cerrar(){

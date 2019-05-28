@@ -55,7 +55,7 @@
                 {
                   $template = '<a
                   class="nav-link resaltado"
-                  href="#"
+                  href="./perfil.php"
                   tabindex="-1"
                   aria-disabled="true"
                   >¡tu Perfil '.$_SESSION["usr"].'!</a
