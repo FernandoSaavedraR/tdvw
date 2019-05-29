@@ -15,6 +15,6 @@ $login.addEventListener('click',async (event)=>{
         console.log("bienvenido")
         location.href ="./index.php"
     }else{
-        swal('Credenciales incorrectas','revise sus datos.','error')
+        swal.fire('Credenciales incorrectas','revise sus datos.','error')
     }
 })  
