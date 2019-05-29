@@ -38,6 +38,8 @@ $boton.addEventListener("click", async () => {
   const datos = await sesion.json();
   if (datos == "error") {
     swal.fire("Credenciales incorrectas", "revise sus datos.", "error");
+  }else{
+    swal.fire("Datos actualizados", "todo se ha logrado actualizar", "success");
   }
   //console.log(datos);
   llenar()
