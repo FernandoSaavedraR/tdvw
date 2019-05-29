@@ -56,8 +56,9 @@ $comprar_btn.addEventListener("click", async event => {
   event.preventDefault();
   const $fecha = document.getElementById("fecha");
   const $numero = document.getElementById("comprarInp");
+  document.getElementById('futer')
   if ($fecha.value == "" || $numero.value == "") {
-      document.getElementById('futer')
+     
       futer.innerHTML ="llene los campos"
   } else {
     const data = new FormData(document.getElementById("formulario"));
@@ -68,5 +69,6 @@ $comprar_btn.addEventListener("click", async event => {
     });
     const datos = await sesion.text();
     console.log(datos);
+    futer.innerHTML="<strong>"+datos+"</strong>";
   }
 });

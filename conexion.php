@@ -85,6 +85,13 @@
 				return $resultados;
 				mysqli_close($con);
 			}
+			public function compra_normal($factual,$fpedida,$pastel,$usr,$cantidad)
+			{
+				$con = $this->conectar();
+				$quert = "CALL COMPRA_NORMAL(STR_TO_DATE(\"$factual\",'%d-%m-%Y'),STR_TO_DATE(\"$fpedida\",'%d-%m-%Y'),\"$pastel\",\"$usr\",$cantidad)";
+				$resultados = $con->query($quert);
+				return $resultados;
+			}
 		}
 ?>
 

@@ -15,6 +15,13 @@
   </head>
 
   <body>
+  <?php session_start();
+      if($_SESSION['sesion']==1){
+       
+      }else{
+        header("location:./index.php");
+      }
+      ?>
     <!-- header -->
     
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
