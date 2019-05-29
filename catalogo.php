@@ -85,52 +85,6 @@
   </nav>
   <!-- /header -->
   <!-- main -->
-  <div class="modal" id="modall" tabindex="-1" role="dialog">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="modal-title">Comprar </h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <!--<span id="hide-modalA"aria-hidden="true">&times;</span>-->
-        </button>
-      </div>
-      <div class="modal-body">
-        <p id="modalCompra">Modal body text goes here.</p>
-      </div>
-      <form>
-        <div class="container mb-1">
-          <div class="row mb-2">
-            <div class="col">
-              <label for="comprarInp">Cuantos desea</label>
-            </div>
-            <div class="col">
-              <input type="number" class="form-control" id="comprarInp" placeholder="Solo numeros">
-            </div>
-          </div>
-          <div class="row">
-          <div class="col">
-              <label for="fecha">Fecha de entrega</label>
-            </div>
-            <div class="col">
-            <input id="fecha" name="fecha" class="form-control" type="date">
-            </div>
-          </div>
-          <div class="row">
-          <div class="col">
-              <strong>total:</strong>
-              <p id="total" style="display:'inline';"></p>
-            </div>
-          </div>
-        </div>
-    </form>
-      <div class="modal-footer">
-        
-        <button type="button" class="btn btn-primary">Comprar</button>
-        <button type="button" id="hide-modal"class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-      </div>
-    </div>
-  </div>
-</div>
   <div class="container mt-3" id="catalogo">
       <div class="row offset-2 offset-md-0">
      
@@ -170,6 +124,53 @@
   </div>
   <div class="overlay" id="overlay"></div>
   <!-- /main -->
+  <div class="modal" id="modall" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modal-title">Comprar </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <!--<span id="hide-modalA"aria-hidden="true">&times;</span>-->
+        </button>
+      </div>
+      <div class="modal-body">
+        <p id="modalCompra">Modal body text goes here.</p>
+      </div>
+      <form id="formulario">
+        <div class="container mb-1">
+          <div class="row mb-2">
+            <div class="col">
+              <label for="comprarInp">Cuantos desea</label>
+            </div>
+            <div class="col">
+              <input type="number" class="form-control" id="comprarInp" name="comprarInp" placeholder="Solo numeros" required>
+            </div>
+          </div>
+          <div class="row">
+          <div class="col">
+              <label for="fecha">Fecha de entrega</label>
+            </div>
+            <div class="col">
+            <input id="fecha" name="fecha" class="form-control" type="date" required>
+            </div>
+          </div>
+          <div class="row">
+          <div class="col">
+              <strong>total:</strong>
+              <p id="total" style="display:'inline';"></p>
+            </div>
+          </div>
+        </div>
+        <input type="text" id="secreto" name="pastel" hidden>
+    </form>
+      <div class="modal-footer text-center">
+        <p id="futer"></p>
+        <button type="submit" id="comprar-btn" class="btn btn-primary">Comprar</button>
+        <button type="button" id="hide-modal"class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+      </div>
+    </div>
+  </div>
+</div>
   <!-- footer -->
   <!-- /footer -->
   <script src="./js/comprar.js"></script>

@@ -34,6 +34,9 @@
             border-radius:100%;
             animation: girar 1s linear infinite;
         }
+        h1{
+            color:#f4266a;
+        }
         @keyframes girar{
             from{transform:rotate(0deg);}
             to{transform:rotate(360deg);}
