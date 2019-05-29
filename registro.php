@@ -177,10 +177,10 @@
             <div class="offset-lg-3 col-lg-6 mt-3">
               <input type="text" class="form-control" id="tarjeta" name="tarjeta" placeholder="tarjeta">
             </div>
-            <div class="offset-lg-3 col-3 mt-3">
+            <div class="offset-lg-3 col-sm-6 col-lg-3 mt-3">
               <input type="text" class="form-control" id="caducidad"name="caducidad" placeholder="Banco">
             </div>
-            <div class="col-3 mt-3">
+            <div class="col-sm-6 col-lg-3 mt-3">
               <input type="text" class="form-control" id="cvv" name="cvv" placeholder="cvv">
             </div>
           </div>

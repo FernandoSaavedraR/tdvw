@@ -118,10 +118,10 @@
       </div>
       <form method="POST" id="formulario">
         <div class="row m-2 align-middle">
-          <div class="col-2 mt-3">
+          <div class="col-sm-12 col-md-2 mt-3 ">
             <label for="nombre">Nombres</label>
           </div>
-          <div class="col-10 mt-3">
+          <div class="col-sm-12 col-md-10 mt-3">
             <input
               type="text"
               id="nombre"
@@ -130,10 +130,10 @@
               placeholder="Nombres"
             />
           </div>
-          <div class="col-2 mt-3">
+          <div class="col-sm-12 col-md-2 mt-3">
             <label for="apellidos">Apellido</label>
           </div>
-          <div class="col-10 mt-3">
+          <div class="col-sm-12 col-md-10 mt-3">
             <input
               type="text"
               id="apellidos"
@@ -141,10 +141,10 @@
               class="form-control"
               placeholder="Apellidos" />
           </div>
-          <div class="col-2 mt-3">
+          <div class="col-sm-12 col-md-2 mt-3">
             <label for="direccion">Direccion</label>
           </div>
-          <div class="col-10 mt-3">
+          <div class="col-sm-12 col-md-10 mt-3">
             <input
               type="text"
               id="direccion"
@@ -153,25 +153,25 @@
               placeholder="Direccion" />
           </div>
         
-          <div class="col-2 mt-3">
+          <div class="col-sm-12 col-md-2 mt-3">
             <label for="sexo">Sexo</label>
           </div>
-          <div class="col-10 mt-3">
+          <div class="col-sm-12 col-md-10 mt-3">
             <select id="sexo" name="sexo" id="">
               <option value="1">Hombre</option>
               <option value="0">Mujer</option>
             </select>
           </div>
-            <div class="col-2 mt-3">
+            <div class="col-sm-12 col-md-2 mt-3">
             <label for="">Tarjeta</label>
             </div>
-            <div class="col-4">
+            <div class="co-sm-12 col-md-4 mt-3">
               <input type="text" class="form-control" id="tarjeta" name="tarjeta" placeholder="tarjeta">
             </div>
-            <div class="col-3">
+            <div class=" col-sm-8 col-md-3 mt-3">
               <input type="text" class="form-control" id="caducidad"name="caducidad" placeholder="Banco">
             </div>
-            <div class="col-3">
+            <div class="col-sm-4 col-md-3 mt-3">
               <input type="text" class="form-control" id="cvv" name="cvv" placeholder="cvv">
             </div>
           </div>
@@ -191,7 +191,35 @@
                 <hr />
         </div>              
       </div>
-      </div>  
+      </div>
+      <div class="container">
+      <table class="table table-striped table-sm text-center">
+        <thead>
+          <tr>
+            <th scope="col">Producto </th>
+            <th scope="col">Estado</th>
+            <th scope="col">Importe</th>
+            <th scope="col">entrega</th>
+          </tr>
+        </thead>
+        <tbody>
+            <?php
+                 include ("conexion.php");
+                 $conexion = new baseDatos();
+                 $resultados = $conexion->pedidos($_SESSION["usr"]);
+                 foreach($resultados as $r)
+                 {
+                    echo "<tr> 
+                            <td>".$r["Nombre"]."</td>
+                            <td>".$r["estado"]."</td>
+                            <td>$".($r["Precio"]*$r["cantidad"])."</td>
+                            <td>".$r["fecha_entrega"]."</td>
+                          </tr>";
+                 }
+            ?>
+        </tbody>
+      </table>
+      </div>
     <!-- /main-->
     <script src="./js/actualizar.js"></script>
     <script

@@ -92,6 +92,12 @@
 				$resultados = $con->query($quert);
 				return $resultados;
 			}
+			public function pedidos($usr){
+				$con = $this->conectar();
+				$quert = "CALL REVISAR_PEDIDOS(\"$usr\")";
+				$resultados = $con->query($quert);
+				return $resultados;
+			}
 		}
 ?>
 

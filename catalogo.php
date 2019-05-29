@@ -35,25 +35,24 @@
           <?php
               $template;
                 session_start();
-                if($_SESSION['sesion']==1)
-                {
-                  $template = '<a
+                if ($_SESSION['sesion']==1) {
+                    $template = '<a
                   class="nav-link resaltado"
                   href="./perfil.php"
                   tabindex="-1"
                   aria-disabled="true"
                   >¡tu Perfil '.$_SESSION["usr"].'!</a
                   >';
-                  echo $template;
-                }else{
-                  $template = '<a
+                    echo $template;
+                } else {
+                    $template = '<a
                   class="nav-link resaltado"
                   href="registro.php"
                   tabindex="-1"
                   aria-disabled="true"
                   >Registrate</a
                   >';
-                  echo $template;
+                    echo $template;
                 }
             ?>
             </li>
@@ -62,19 +61,18 @@
             <?php
               $template;
                 session_start();
-                if($_SESSION['sesion']==1)
-                {
-                  $template = '<button type="button" class="btn btn-success" 
+                if ($_SESSION['sesion']==1) {
+                    $template = '<button type="button" class="btn btn-success" 
                   onclick="location.href=\'logout.php\'">
                   cerrar sesión
                   </button>';
-                  echo $template;
-                }else{
-                  $template = '<button type="button" class="btn btn-success" 
+                    echo $template;
+                } else {
+                    $template = '<button type="button" class="btn btn-success" 
                   onclick="location.href=\'login.php\'">
                   Iniciar sesión
                   </button>';
-                  echo $template;
+                    echo $template;
                 }
             ?>
               
@@ -86,27 +84,24 @@
   <!-- /header -->
   <!-- main -->
   <div class="container mt-3" id="catalogo">
-      <div class="row offset-2 offset-md-0">
+      <div class="row mx-auto">
      
     <?php
-        include ("conexion.php");
+        include("conexion.php");
         $conexion = new baseDatos();
         $resultados = $conexion->c_Producto();
-        foreach($resultados as $r)
-        {
-          if($_SESSION['sesion']==1)
-                {
-          $template = '
-          <div class="col-lg-4 col-md-6 mb-2">
+        foreach ($resultados as $r) {
+            if ($_SESSION['sesion']==1) {
+                $template = '
+          <div class="col-lg-4 col-md-6 mb-2 ">
           <div class="card" style="width: 18rem;">
               <img src="'.$r["IMG"].'" class="card-img-top p-1" alt="...">
               <div class="card-body">
                 <p class="card-text text-center"><strong>'.$r["NOMBRE"].'</strong><br> Precio: $'.$r["PRECIO"].'<br>'.$r[DESCRIPCION].'<br>
               <button type="button" data-name="'.$r["NOMBRE"].'" data-price="'.$r["PRECIO"].'"class="btn btn-success" onclick="funcion(event)">¡Comprar!</button>
           </div></div></div>';
-                }
-          else{
-            $template = '
+            } else {
+                $template = '
           <div class="col-lg-4 col-md-6 mb-2">
           <div class="card" style="width: 18rem;">
               <img src="'.$r["IMG"].'" class="card-img-top p-1" alt="...">
@@ -114,8 +109,8 @@
                 <p class="card-text text-center"><strong>'.$r["NOMBRE"].'</strong><br> Precio: $'.$r["PRECIO"].'<br>'.$r[DESCRIPCION].'<br>
                 <strong> inicie sesion para comprar </strong>
           </div></div></div>';
-          }
-          echo $template;
+            }
+            echo $template;
         }
        
      ?>
@@ -169,6 +164,7 @@
         <button type="button" id="hide-modal"class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
       </div>
     </div>
+  </div>
   </div>
 </div>
   <!-- footer -->
