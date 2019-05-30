@@ -51,7 +51,7 @@
         (async function cerrar(){
         //console.log(event)
         const data = new FormData(document.getElementById('formulario'));
-        const sesion = await fetch('./compra.php')
+        const sesion = await fetch('./compra.php').catch(console.log("error"))
         //location.href ="./index.php"
         })();
     </script>

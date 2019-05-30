@@ -51,16 +51,17 @@
             <?php
               $template;
                 session_start();
-                if($_SESSION['sesion']==1)
-                {
-                  $template = '<a
+                if (isset($_SESSION["usr"])) {
+                    if ($_SESSION['sesion']==1) {
+                        $template = '<a
                   class="nav-link resaltado"
                   href="./perfil.php"
                   tabindex="-1"
                   aria-disabled="true"
                   >¡tu Perfil '.$_SESSION["usr"].'!</a
                   >';
-                  echo $template;
+                        echo $template;
+                    }
                 }else{
                   $template = '<a
                   class="nav-link resaltado"
@@ -79,15 +80,15 @@
               
             <?php
               $template;
-                session_start();
-                if($_SESSION['sesion']==1)
-                {
-                  $template = '<button type="button" class="btn btn-success" 
+              if (isset($_SESSION["usr"])) {
+                  if ($_SESSION['sesion']==1) {
+                      $template = '<button type="button" class="btn btn-success" 
                   onclick="location.href=\'logout.php\'">
                   cerrar sesión
                   </button>';
-                  echo $template;
-                }else{
+                      echo $template;
+                  }
+              }else{
                   $template = '<button type="button" class="btn btn-success" 
                   onclick="location.href=\'login.php\'">
                   Iniciar sesión

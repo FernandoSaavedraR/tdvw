@@ -39,7 +39,7 @@
     <!-- header -->
     <?php
        session_start();
-      if($_SESSION['sesion']==1){
+       if (isset($_SESSION["usr"])) {
         header("location:./index.php");
       }else{
         

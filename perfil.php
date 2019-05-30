@@ -17,7 +17,7 @@
 
   <body>
   <?php session_start();
-      if($_SESSION['sesion']==1){
+      if (isset($_SESSION["usr"])) {
        
       }else{
         header("location:./index.php");
@@ -58,17 +58,18 @@
             <li class="nav-item ml-3">
             <?php
               $template;
-                session_start();
-                if ($_SESSION['sesion']==1) {
-                    $template = '<a
+              if (isset($_SESSION["usr"])) {
+                  if ($_SESSION['sesion']==1) {
+                      $template = '<a
                   class="nav-link resaltado"
                   href="perfil.php"
                   tabindex="-1"
                   aria-disabled="true"
                   >¡tu Perfil '.$_SESSION["usr"].'!</a
                   >';
-                    echo $template;
-                } else {
+                      echo $template;
+                  }
+              } else {
                     $template = '<a
                   class="nav-link resaltado"
                   href="registro.php"
@@ -86,14 +87,15 @@
               
             <?php
               $template;
-                session_start();
-                if ($_SESSION['sesion']==1) {
-                    $template = '<button type="button" class="btn btn-success" 
+              if (isset($_SESSION["usr"])) {
+                  if ($_SESSION['sesion']==1) {
+                      $template = '<button type="button" class="btn btn-success" 
                   onclick="location.href=\'logout.php\'">
                   cerrar sesión
                   </button>';
-                    echo $template;
-                } else {
+                      echo $template;
+                  }
+              }else {
                     $template = '<button type="button" class="btn btn-success" 
                   onclick="location.href=\'login.php\'">
                   Iniciar sesión
@@ -206,15 +208,16 @@
             <?php
                  include ("conexion.php");
                  $conexion = new baseDatos();
-                 $resultados = $conexion->pedidos($_SESSION["usr"]);
-                 foreach($resultados as $r)
-                 {
-                    echo "<tr> 
+                 if (isset($_SESSION["usr"])) {
+                     $resultados = $conexion->pedidos($_SESSION["usr"]);
+                     foreach ($resultados as $r) {
+                         echo "<tr> 
                             <td>".$r["Nombre"]."</td>
                             <td>".$r["estado"]."</td>
                             <td>$".($r["Precio"]*$r["cantidad"])."</td>
                             <td>".$r["fecha_entrega"]."</td>
                           </tr>";
+                     }
                  }
             ?>
         </tbody>

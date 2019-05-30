@@ -6,8 +6,8 @@ async function llenar() {
  const $tarjeta = document.getElementById('tarjeta')
  const $caducidad = document.getElementById('caducidad')
  const  $cvv = document.getElementById('cvv')
- const data = await fetch("./llenar.php")
- const datos = await data.json()
+ const data = await fetch("./llenar.php").catch(console.log("error"))
+ const datos = await data.json().catch(console.log("error"))
  console.log(datos)
  $nombre.value = datos.nombre;
  $apellidos.value = datos.apellidos;
@@ -34,8 +34,8 @@ $boton.addEventListener("click", async () => {
   const sesion = await fetch("./actualizar.php", {
     method: "POST",
     body: data
-  });
-  const datos = await sesion.json();
+  }).catch(console.log("error"));
+  const datos = await sesion.json().catch(console.log("error"));
   if (datos == "error") {
     swal.fire("Credenciales incorrectas", "revise sus datos.", "error");
   }else{
