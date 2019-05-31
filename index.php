@@ -19,7 +19,7 @@
     
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container">
-        <a class="navbar-brand" href="#">Navbar</a>
+        <img src="./img/logowhite.svg" class="logo" alt="logo">
         <button
           class="navbar-toggler"
           type="button"
@@ -125,9 +125,9 @@
           <div class="carousel-item">
             <img src="./img/bantresl.jpg" class="d-block w-100" alt="img-crsl" />
           </div>
-          <div class="carousel-item">
+          <!--<div class="carousel-item">
             <img src="./img/f1.jpg" class="d-block w-100" alt="img-crsl" />
-          </div>
+          </div>-->
         </div>
         <a
           class="carousel-control-prev"

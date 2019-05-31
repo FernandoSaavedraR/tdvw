@@ -47,7 +47,7 @@
     ?>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container">
-        <a class="navbar-brand" href="#">Navbar</a>
+      <img src="./img/logowhite.svg" class="logo" alt="logo">
         <button
           class="navbar-toggler"
           type="button"
