@@ -114,16 +114,19 @@
         <div class="carousel-inner p-1">
           
           <div class="carousel-item active">
+            <img src="./img/BANNER1.jpg" class="d-block w-100" alt="img-crsl" />
+          </div>
+          <div class="carousel-item">
+            <img src="./img/ffm.jpg" class="d-block w-100" alt="img-crsl" />
+          </div>
+          <div class="carousel-item">
+            <img src="./img/natural.jpg" class="d-block w-100" alt="img-crsl" />
+          </div>
+          <div class="carousel-item">
+            <img src="./img/bantresl.jpg" class="d-block w-100" alt="img-crsl" />
+          </div>
+          <div class="carousel-item">
             <img src="./img/f1.jpg" class="d-block w-100" alt="img-crsl" />
-          </div>
-          <div class="carousel-item">
-            <img src="./img/ff.jpg" class="d-block w-100" alt="img-crsl" />
-          </div>
-          <div class="carousel-item">
-            <img src="./img/imposible.jpg" class="d-block w-100" alt="img-crsl" />
-          </div>
-          <div class="carousel-item">
-            <img src="./img/tresl.jpg" class="d-block w-100" alt="img-crsl" />
           </div>
         </div>
         <a
@@ -145,23 +148,56 @@
           <span class="sr-only">Next</span>
         </a>
       </div>
-    
+      <div class ="container-fluid">
+        <div class ="row">
+          <div class="col">
+              <div class="card">
+                <div class="card-body">
+                  <div class ="container-fluid">
+                    <div class ="row">
+                      <div class="col"><center><img src="./img/telepersona.jpg"/></center></div>
+                      <div class="col">
+                        <p class="card-text text-center"><h2>¿CÓMO COMPRAR?</h2><br>
+                           <ol>
+                             <li>Crea una cuenta o inicia sesión</li>
+                             <li>Elige tu pastel favorito de nuestro catálogo</li>
+                             <li>Da click en el botón ¡Comprar!</li>
+                           </ol><br>
+                           <strong style="color:green;"><center>FÁCIL Y SENCILLO ~ Disfruta nuestros deliciosos pasteles</center></strong>
+                         </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div> 
+      </div>
+      <div class ="container-fluid">
+        <div class ="row">
+          <div class="col">
+              <div class="card">
+                <div class="card-body">
+                  <div class ="container-fluid">
+                    <div class ="row">
+                      <div class="col"><center><img src="./img/envio.jpg" style="width:  12em;"/></center></div>
+                      <div class="col">
+                        <p class="card-text text-center"><h2>DISFRUTA DE NUESTRO ENVÍO GRÁTIS</h2><br><br>
+                          Envío grátis durante todos los días de la semana.<br>
+                          Lísto para cuando lo necesites.<br><br>
+                          <center><h2 style="color: green;">ORDENA YA!!</h2></center>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div> 
+      </div>
     </main>
     <!-- /main -->
     <!-- footer -->
-    <footer id="footer" class="pb-3 pt-3">
-      <div class="container">
-        <div class="row text-center">
-          <div class="col-12 col-lg">
-            <a href="#" -12>Preguntas frecuentes</a>
-          </div>
-          <div class="col-12 col-lg">
-            <a href="licencias.html" target="_blank" -12>Licencias</a>
-          </div>
-          <div class="col-12 col-lg">Derechos reservados Inges Inc &copy</div>
-        </div>
-      </div>
-    </footer>
     <!-- /footer -->
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

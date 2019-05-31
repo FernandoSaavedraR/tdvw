@@ -111,7 +111,7 @@
           <div class="card" style="width: 18rem;">
               <img src="'.$r["IMG"].'" class="card-img-top p-1" alt="...">
               <div class="card-body">
-                <p class="card-text text-center"><strong>'.$r["NOMBRE"].'</strong><br> Precio: $'.$r["PRECIO"].'<br>'.$r[DESCRIPCION].'<br>
+                <p class="card-text text-center"><strong>'.$r["NOMBRE"].'</strong><br> Precio: $'.$r["PRECIO"].'<br>'.$r["DESCRIPCION"].'<br>
                 <strong> inicie sesion para comprar </strong>
           </div></div></div>';
             }
