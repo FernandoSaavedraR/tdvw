@@ -113,10 +113,11 @@ CREATE PROCEDURE AGREGAR_RECETA(INGREDIENTE VARCHAR(50),PRODUCT VARCHAR(40),QUAN
 BEGIN
 	DECLARE ID_I INT;
     DECLARE ID_P INT;
+   DECLARE EXISTE INT;
 	SET ID_I =(SELECT ID_INVENTARIO FROM INVENTARIO WHERE INGREDIENTE = PRODUCTO);
     SET ID_P = (SELECT ID_PRODUCTO FROM PRODUCTO WHERE NOMBRE = PRODUCT);
-    SELECT ID_I,ID_P;
-    IF (ID_I > 0)  AND (ID_P > 0) THEN
+    SET EXISTE = (SELECT COUNT(*)FROM REL_INVENTARIO_PRODUCTO WHERE ID_INVENTARIO = ID_I AND ID_PRODUCTO =ID_P);
+    IF (ID_I > 0)  AND (ID_P > 0) AND (EXISTE < 1)THEN
 		INSERT INTO REL_INVENTARIO_PRODUCTO(ID_INVENTARIO,ID_PRODUCTO,CANTIDAD) VALUES (ID_I,ID_P,QUANTITY);
         SELECT "SE REGISTRÓ EL INGREDIENTE" AS MENSAJE;
 	ELSE
@@ -217,7 +218,7 @@ inner join producto on id_materiales = id_producto
 inner join pedidos on pedidos.id_pedido = rel_pedidos_inventario.ID_PEDIDO
 inner join usuario on id_cliente = id_usuario where usuario=USR ;
 END //
-
+DELIMITER ;
 DROP PROCEDURE IF EXISTS ALTA_PASTELERO;
 DELIMITER //
 
@@ -286,3 +287,33 @@ CREATE PROCEDURE ACEPTAR(ID INT)
 	BEGIN
 		UPDATE PEDIDOS SET ESTADO = "ACEPTADO" WHERE ID_PEDIDO = ID;
 	END //
+DELIMITER ;
+DROP PROCEDURE IF EXISTS REVISAR_INVENTARIO;
+DELIMITER //
+
+CREATE PROCEDURE REVISAR_INVENTARIO()
+BEGIN
+	select id_relacion, rel_inventario_producto.cantidad as requerido, producto,
+inventario.cantidad as disponible, nombre from rel_inventario_producto
+ inner join inventario on inventario.id_inventario = rel_inventario_producto.id_inventario
+inner join producto on producto.id_producto = rel_inventario_producto.id_producto;
+END //
+DELIMITER ;
+DROP PROCEDURE IF EXISTS REVISAR_INVENTARIO_FILTRO;
+DELIMITER //
+
+CREATE PROCEDURE REVISAR_INVENTARIO_FILTRO(CONDICION VARCHAR(40))
+BEGIN
+	select id_relacion, rel_inventario_producto.cantidad as requerido, producto,
+inventario.cantidad as disponible, nombre from rel_inventario_producto
+ inner join inventario on inventario.id_inventario = rel_inventario_producto.id_inventario
+inner join producto on producto.id_producto = rel_inventario_producto.id_producto
+WHERE producto = condicion or nombre = condicion;
+END //
+DELIMITER ;
+DROP PROCEDURE IF EXISTS ELIMINAR_INGREDIENTE;
+DELIMITER //
+CREATE PROCEDURE ELIMINAR_INGREDIENTE(ID_ELIMINAR INT)
+BEGIN
+	DELETE FROM REL_INVENTARIO_PRODUCTO WHERE ID_RELACION = ID_ELIMINAR;
+END //
