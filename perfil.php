@@ -176,6 +176,12 @@
             <div class="col-sm-4 col-md-3 mt-3">
               <input type="text" class="form-control" id="cvv" name="cvv" placeholder="cvv">
             </div>
+            <div class="col-sm-12 col-md-2 mt-3">
+            <label for="">Fondos</label>
+            </div>
+            <div class="col-sm-4 col-md-3 mt-3 ">
+              <input type="text" class="form-control" id="fondos" name="fondos" placeholder="fondos" disabled>
+            </div>
           </div>
           <div class="col-lg-5 mt-3 text-center" >
           <?php
@@ -194,7 +200,7 @@
         </div>              
       </div>
       </div>
-      <div class="container">
+      <div class="container" id="pedidos">
       <table class="table table-striped table-sm text-center">
         <thead>
           <tr>
@@ -202,6 +208,7 @@
             <th scope="col">Estado</th>
             <th scope="col">Importe</th>
             <th scope="col">entrega</th>
+            <th scope="col">cancelar</th>
           </tr>
         </thead>
         <tbody>
@@ -216,6 +223,7 @@
                             <td>".$r["estado"]."</td>
                             <td>$".($r["Precio"]*$r["cantidad"])."</td>
                             <td>".$r["fecha_entrega"]."</td>
+                            <td><button type=\"submit\"  data-id =\" ".$r["id"]."\"class=\"btn btn-primary\">cancelar</button>
                           </tr>";
                      }
                  }

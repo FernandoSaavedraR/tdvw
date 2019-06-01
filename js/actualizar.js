@@ -1,4 +1,5 @@
 async function llenar() {
+ const $fondos = document.getElementById('fondos')
  const  $nombre = document.getElementById('nombre')
  const  $apellidos = document.getElementById('apellidos')
  const $direccion = document.getElementById('direccion')
@@ -23,6 +24,7 @@ async function llenar() {
     $tarjeta.value = datos.numero;
     $caducidad.value = datos.banco;
     $cvv.value = datos.cvv;
+    $fondos.value = datos.fondos;
  }
 }
 llenar()
@@ -44,3 +46,17 @@ $boton.addEventListener("click", async () => {
   //console.log(datos);
   llenar()
 });
+
+$pedidos = document.getElementById("pedidos")
+$botones = $pedidos.getElementsByTagName("button")
+for(let i = 0;i<$botones.length;i++){
+  
+  $botones[i].addEventListener('click',async (event)=>{
+    event.preventDefault();
+    $id = event.target.dataset.id
+    const sesion = await fetch(`./cancelar.php?id=${$id}`)
+    const datos = await sesion.text()
+    swal.fire(datos).then(()=>{location.reload(true)})
+    
+  })
+}

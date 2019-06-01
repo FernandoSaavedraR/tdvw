@@ -169,7 +169,7 @@ DROP PROCEDURE IF EXISTS CONS_USR;
 DELIMITER //
 CREATE PROCEDURE CONS_USR(USR VARCHAR(40))
 BEGIN
-	select nombre,apellidos,usuario,contrasena,direccion,numero,cvv,banco,sexo from persona 
+	select nombre,apellidos,usuario,contrasena,direccion,numero,cvv,banco,sexo,fondos from persona 
 	inner join usuario on persona.id_persona = usuario.id_persona
 	inner join rel_dir_persona on rel_dir_persona.id_persona = persona.id_persona
 	inner join direcciones on rel_dir_persona.id_direccion = direcciones.id_direccion
@@ -213,7 +213,7 @@ DROP PROCEDURE IF EXISTS REVISAR_PEDIDOS;
 DELIMITER //
 CREATE PROCEDURE REVISAR_PEDIDOS(USR TEXT)
 BEGIN
-select Nombre, Precio,estado,cantidad,fecha_entrega,fecha_pedido,usuario from rel_pedidos_inventario
+select rel_pedidos_inventario.id_pedido as id,Nombre, Precio,estado,cantidad,fecha_entrega,fecha_pedido,usuario from rel_pedidos_inventario
 inner join producto on id_materiales = id_producto
 inner join pedidos on pedidos.id_pedido = rel_pedidos_inventario.ID_PEDIDO
 inner join usuario on id_cliente = id_usuario where usuario=USR ;
@@ -278,9 +278,20 @@ DROP PROCEDURE IF EXISTS RECHAZAR;
 DELIMITER //
 	CREATE PROCEDURE RECHAZAR(ID INT)
 	BEGIN
+		DECLARE PRECIOI FLOAT;
+		DECLARE CANTIDADI INT;
+		DECLARE ID_U INT;
+		DECLARE ID_T INT;
+		SET PRECIOI = (SELECT PRECIO FROM REL_PEDIDOS_INVENTARIO INNER JOIN PRODUCTO ON ID_MATERIALES = ID_PRODUCTO WHERE ID_PEDIDO = ID);
+		SET CANTIDADI = (SELECT CANTIDAD FROM PEDIDOS WHERE ID_PEDIDO = ID);
+		SET ID_U = (SELECT ID_CLIENTE FROM PEDIDOS WHERE ID_PEDIDO = ID);
+		SET ID_T = (SELECT ID_TARJETA FROM REL_TARJETA_USUARIO WHERE ID_U = ID_USUARIO);
+		UPDATE TARJETA SET FONDOS = (FONDOS+(PRECIOI*CANTIDADI)) WHERE ID_T = ID_TARJETA;
 		UPDATE PEDIDOS SET ESTADO = "RECHAZADO" WHERE ID_PEDIDO = ID;
+		SELECT PRECIOI,CANTIDADI;
 	END //
 DELIMITER ;
+
 DROP PROCEDURE IF EXISTS ACEPTAR;
 DELIMITER //
 CREATE PROCEDURE ACEPTAR(ID INT)
@@ -316,4 +327,19 @@ DELIMITER //
 CREATE PROCEDURE ELIMINAR_INGREDIENTE(ID_ELIMINAR INT)
 BEGIN
 	DELETE FROM REL_INVENTARIO_PRODUCTO WHERE ID_RELACION = ID_ELIMINAR;
+END //
+
+DELIMITER ;
+DROP PROCEDURE IF EXISTS SURTIR;
+DELIMITER //
+CREATE PROCEDURE SURTIR(NAME VARCHAR(40),QUANTITY INT)
+BEGIN
+	DECLARE ID INT;
+	SET ID = (SELECT ID_INVENTARIO FROM INVENTARIO WHERE NAME = PRODUCTO);
+	IF ID > 0 THEN
+	UPDATE  INVENTARIO SET CANTIDAD = QUANTITY WHERE ID_INVENTARIO = ID;
+	SELECT "PRODUCTO ACTUALIZADO" AS MENSAJE;
+	ELSE
+	SELECT "NO SE PUDO ACTUALIZAR EL PRODUCTO";
+	END IF;
 END //
