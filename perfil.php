@@ -201,7 +201,7 @@
       </div>
       </div>
       <div class="container" id="pedidos">
-      <table class="table table-striped table-sm text-center">
+      <table class="table table-striped table-sm text-center" >
         <thead>
           <tr>
             <th scope="col">Producto </th>
@@ -211,23 +211,8 @@
             <th scope="col">cancelar</th>
           </tr>
         </thead>
-        <tbody>
-            <?php
-                 include ("conexion.php");
-                 $conexion = new baseDatos();
-                 if (isset($_SESSION["usr"])) {
-                     $resultados = $conexion->pedidos($_SESSION["usr"]);
-                     foreach ($resultados as $r) {
-                         echo "<tr> 
-                            <td>".$r["Nombre"]."</td>
-                            <td>".$r["estado"]."</td>
-                            <td>$".($r["Precio"]*$r["cantidad"])."</td>
-                            <td>".$r["fecha_entrega"]."</td>
-                            <td><button type=\"submit\"  data-id =\" ".$r["id"]."\"class=\"btn btn-primary\">cancelar</button>
-                          </tr>";
-                     }
-                 }
-            ?>
+        <tbody id="pedidos_t">
+            
         </tbody>
       </table>
       </div>

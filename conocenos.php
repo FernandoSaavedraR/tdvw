@@ -177,7 +177,7 @@
             <a href="#" -12>Preguntas frecuentes</a>
           </div>
           <div class="col-12 col-lg">
-            <a href="#" -12>Contactanos</a>
+            <a href="mailto:tartedelavie@gmail.com">Contactanos</a>
           </div>
           <div class="col-12 col-lg">Derechos reservados Inges Inc &copy</div>
         </div>
