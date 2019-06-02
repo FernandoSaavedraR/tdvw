@@ -123,7 +123,7 @@
                   Pastelero desde los 15 años, capaz de hacerte el mejor
                   pastel imposible con los ojos cerrados.
                 </p>
-                <a href="https://www.facebook.com/JavierLoEs22" class="btn btn-primary">Visita su facebook</a>
+                <a href="https://www.facebook.com/JavierLoEs22" target="_blank" class="btn btn-primary">Visita su facebook</a>
               </div>
               </div>
             </div>
@@ -136,7 +136,7 @@
                   Creció en un barrio lejano donde los pasteleros entrenan con
                   tigres, si necesitas un pastel el lo hace.
                 </p>
-                <a href="https://www.facebook.com/julio.river3" class="btn btn-primary">Visita su facebook</a>
+                <a href="https://www.facebook.com/julio.river3" target="_blank"  class="btn btn-primary">Visita su facebook</a>
               </div>
             </div>
             </div>
@@ -149,7 +149,7 @@
                   Un mounstruo haciendo pasteles, si lo necesitas
                   ella lo hace.
                 </p>
-                <a href="https://www.facebook.com/GupyTheGU" class="btn btn-primary">Visita su facebook</a>
+                <a href="https://www.facebook.com/GupyTheGU" target="_blank"  class="btn btn-primary">Visita su facebook</a>
               </div>
             </div>
             </div>
@@ -162,7 +162,7 @@
                   que su apariencia no te engañe, es el mejor pastelero de la costa
                   oeste.
                 </p>
-                <a href="https://www.facebook.com/ferchosaav" class="btn btn-primary">Visita su facebook</a>
+                <a href="https://www.facebook.com/ferchosaav" target="_blank" class="btn btn-primary">Visita su facebook</a>
               </div>
             </div>
             </div>
