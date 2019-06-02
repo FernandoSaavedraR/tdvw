@@ -12,6 +12,7 @@
     />
     <link rel="stylesheet" href="sweet\sweetalert2.min.css">
     <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="./img/logo.ico" type="image/x-icon">
     <title>Tarte de la vie</title>
   </head>
 

@@ -10,6 +10,7 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
+    <link rel="shortcut icon" href="./img/logo.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css" />
     <title>Tarte de la vie</title>
   </head>

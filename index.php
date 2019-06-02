@@ -12,6 +12,7 @@
     />
     <link rel="stylesheet" href="style.css" />
     <title>Tarte de la vie</title>
+    <link rel="shortcut icon" href="./img/logo.ico" type="image/x-icon">
   </head>
 
   <body>

@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <link rel="shortcut icon" href="./img/logo.ico" type="image/x-icon">
+    <title>Tarte de la vie</title>
     <style>
         *,*:after,*:before{
             margin:0;
