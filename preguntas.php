@@ -6,21 +6,20 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link
       rel="stylesheet"
-      href="./bootstrap/css/bootstrap.min.css"  
+      href="./bootstrap/css/bootstrap.min.css"
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
-    <link rel="shortcut icon" href="./img/logo.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css" />
     <title>Tarte de la vie</title>
   </head>
 
   <body>
     <!-- header -->
-
+    
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container">
-      <img src="./img/logowhite.svg" class="logo" alt="logo">
+        <a class="navbar-brand" href="#">Navbar</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -89,8 +88,7 @@
                   </button>';
                       echo $template;
                   }
-              }
-              else{
+              }else{
                   $template = '<button type="button" class="btn btn-success" 
                   onclick="location.href=\'login.php\'">
                   Iniciar sesión
@@ -99,91 +97,63 @@
                 }
             ?>
               
+            </li>
           </ul>
         </div>
       </div>
     </nav>
     <!-- /header -->
     <!-- main -->
-    <section id="pasteleros">
-      <div class="container">
-        <div class="row mt-2 text-center">
+    <main>
+      <br>
+      <br>
+      <div class ="container-fluid">
+        <center><h1>PREGUNTAS FRECUENTES</h1></center><br><br>
+        <div class ="row">
           <div class="col">
-            <small>Conoce a</small>
-            <h2>nuestros pasteleros</h2>
+            <ol>
+              <div class="card">
+                <div class="card-body">
+                  <li><strong>¿Es necesario que cree una cuenta para poder pedir uno de los pasteles del catálogo?</strong><br>Nuestro servicio sólo podemos proveerlo a nuestros usuarios, creando una cuenta podemos proteger la información bancaria y personal de nuestros clientes, así como ofrecer un mejor servicio</li>
+                </div>
+              </div>
+              <br>
+              <div class="card">
+                <div class="card-body">
+                  <li><strong>¿Es necesario que cree una cuenta para poder pedir uno de los pasteles del catálogo?</strong><br>Nuestro servicio sólo podemos proveerlo a nuestros usuarios, creando una cuenta podemos proteger la información bancaria y personal de nuestros clientes, así como ofrecer un mejor servicio</li>
+                </div>
+              </div>
+              <br>
+              <div class="card">
+                <div class="card-body">
+                  <li><strong>¿Están todos los productos a la venta?</strong><br>Sólo están a la venta aquellos que aparecen en nuestro catálogo y cuentan con el botón de comprar.</li>
+                </div>
+              </div>
+              <br>
+              <div class="card">
+                <div class="card-body">
+                  <li><strong>¿Mis pasteles llegarán en buen estado?</strong><br>Nos aseguramos de que los pasteles se encuentren seguramente empaquetados a través de varios mecanismos para que no sufran desfiguros durante su traslado.</li>
+                </div>
+              </div>
+              <br>
+              <div class="card">
+                <div class="card-body">
+                  <li><strong>¿Puedo hacer algún pedido especial?</strong><br>Por el momento sólo los productos del catálogo estan disponibls para su compra por internet, si requiere de algún producto distinto o especificaciones especiales sólo podrá ser a través del contacto con alguno de nuestros pasteleros.</li>
+                </div>
+              </div>
+              <br>
+              <div class="card">
+                <div class="card-body">
+                  <li><strong>¿Los pastles son hechos con ingredientes totalmente naturales?</strong><br>Para asegurar la calidad de nuestros pasteles utilizamos sólo productos 100% naturales, directamente de agricultores con los que tenemos tratos.</li>
+                </div>
+              </div>
+            </ol>
           </div>
-        </div>
-        <div class="row text-center">
-          <div class=" offset-lg-2 col-lg-4 col-md-6 mb-2">
-            <div class="card" >
-              <img src="./img/inge.jpg" class="card-img-top p-1" alt="pastelero img" />
-              <div class="card-body">
-                <h5 class="card-title">Javi Lopez</h5>
-                <p class="card-text">
-                  Pastelero desde los 15 años, capaz de hacerte el mejor
-                  pastel imposible con los ojos cerrados.
-                </p>
-                <a href="https://www.facebook.com/JavierLoEs22" target="_blank" class="btn btn-primary">Visita su facebook</a>
-              </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-2">
-            <div class="card" >
-              <img src="./img/julio.jpg" class="card-img-top p-1" alt="pastelero img" />
-              <div class="card-body">
-                <h5 class="card-title">Julio Zuñiga</h5>
-                <p class="card-text">
-                  Creció en un barrio lejano donde los pasteleros entrenan con
-                  tigres, si necesitas un pastel el lo hace.
-                </p>
-                <a href="https://www.facebook.com/julio.river3" target="_blank"  class="btn btn-primary">Visita su facebook</a>
-              </div>
-            </div>
-            </div>
-            <div class="offset-lg-2 col-lg-4 col-md-6 mb-2">
-            <div class="card" >
-              <img src="./img/hunny.jpg" class="card-img-top p-1" alt="pastelero img" />
-              <div class="card-body">
-                <h5 class="card-title">Zitlaly Círigo</h5>
-                <p class="card-text">
-                  Un mounstruo haciendo pasteles, si lo necesitas
-                  ella lo hace.
-                </p>
-                <a href="https://www.facebook.com/GupyTheGU" target="_blank"  class="btn btn-primary">Visita su facebook</a>
-              </div>
-            </div>
-            </div>
-            <div class=" col-lg-4 col-md-6 mb-2"">
-            <div class="card" >
-              <img src="./img/fer.jpeg" class="card-img-top p-1" alt="pastelero img" />
-              <div class="card-body">
-                <h5 class="card-title">Fernando Saavedra</h5>
-                <p class="card-text">
-                  que su apariencia no te engañe, es el mejor pastelero de la costa
-                  oeste.
-                </p>
-                <a href="https://www.facebook.com/ferchosaav" target="_blank" class="btn btn-primary">Visita su facebook</a>
-              </div>
-            </div>
-            </div>
-          </div>
-        </div>
-    </section>
-    <!-- /main -->
-    <!-- footer -->
-    <footer id="footer" class="pb-3 pt-3">
-      <div class="container">
-        <div class="row text-center">
-          <div class="col-12 col-lg">
-            <a href="preguntas.php" -12>Preguntas frecuentes</a>
-          </div>
-          <div class="col-12 col-lg">
-            <a href="mailto:tartedelavie@gmail.com">Contactanos</a>
-          </div>
-          <div class="col-12 col-lg">Derechos reservados Inges Inc &copy</div>
         </div>
       </div>
-    </footer>
+    </main>
+    <!-- /main -->
+    <!-- footer -->
     <!-- /footer -->
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
