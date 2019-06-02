@@ -98,6 +98,12 @@
 				$resultados = $con->query($quert);
 				return $resultados;
 			}
+			public function cancelar($id){
+				$con = $this->conectar();
+				$quert = "CALL ELIMINAR_PEDIDO($id)";
+				$resultados = $con->query($quert);
+				return $resultados;
+			}
 		}
 ?>
 

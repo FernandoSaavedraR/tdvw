@@ -31,6 +31,7 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
+    <link rel="shortcut icon" href="./img/logo.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css" />
     <title>Tarte de la vie</title>
   </head>
@@ -39,7 +40,7 @@
     <!-- header -->
     <?php
        session_start();
-      if($_SESSION['sesion']==1){
+       if (isset($_SESSION["usr"])) {
         header("location:./index.php");
       }else{
         
@@ -47,7 +48,7 @@
     ?>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container">
-        <a class="navbar-brand" href="#">Navbar</a>
+      <img src="./img/logowhite.svg" class="logo" alt="logo">
         <button
           class="navbar-toggler"
           type="button"

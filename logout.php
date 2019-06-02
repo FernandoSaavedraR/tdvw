@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <link rel="shortcut icon" href="./img/logo.ico" type="image/x-icon">
+    <title>Tarte de la vie</title>
     <style>
         *,*:after,*:before{
             margin:0;
@@ -52,7 +53,9 @@
         (async function cerrar(){
         //console.log(event)
         const data = new FormData(document.getElementById('formulario'));
-        const sesion = await fetch('./ssesion.php')
+        const sesion = await fetch('./ssesion.php').catch(function() {
+            console.log("error");
+        });
         location.href ="./index.php"
         })();
     </script>

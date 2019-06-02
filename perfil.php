@@ -12,12 +12,13 @@
     />
     <link rel="stylesheet" href="sweet\sweetalert2.min.css">
     <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="./img/logo.ico" type="image/x-icon">
     <title>Tarte de la vie</title>
   </head>
 
   <body>
   <?php session_start();
-      if($_SESSION['sesion']==1){
+      if (isset($_SESSION["usr"])) {
        
       }else{
         header("location:./index.php");
@@ -27,7 +28,7 @@
     
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container">
-        <a class="navbar-brand" href="#">Navbar</a>
+      <img src="./img/logowhite.svg" class="logo" alt="logo">
         <button
           class="navbar-toggler"
           type="button"
@@ -58,17 +59,18 @@
             <li class="nav-item ml-3">
             <?php
               $template;
-                session_start();
-                if ($_SESSION['sesion']==1) {
-                    $template = '<a
+              if (isset($_SESSION["usr"])) {
+                  if ($_SESSION['sesion']==1) {
+                      $template = '<a
                   class="nav-link resaltado"
                   href="perfil.php"
                   tabindex="-1"
                   aria-disabled="true"
                   >¡tu Perfil '.$_SESSION["usr"].'!</a
                   >';
-                    echo $template;
-                } else {
+                      echo $template;
+                  }
+              } else {
                     $template = '<a
                   class="nav-link resaltado"
                   href="registro.php"
@@ -86,14 +88,15 @@
               
             <?php
               $template;
-                session_start();
-                if ($_SESSION['sesion']==1) {
-                    $template = '<button type="button" class="btn btn-success" 
+              if (isset($_SESSION["usr"])) {
+                  if ($_SESSION['sesion']==1) {
+                      $template = '<button type="button" class="btn btn-success" 
                   onclick="location.href=\'logout.php\'">
                   cerrar sesión
                   </button>';
-                    echo $template;
-                } else {
+                      echo $template;
+                  }
+              }else {
                     $template = '<button type="button" class="btn btn-success" 
                   onclick="location.href=\'login.php\'">
                   Iniciar sesión
@@ -174,6 +177,12 @@
             <div class="col-sm-4 col-md-3 mt-3">
               <input type="text" class="form-control" id="cvv" name="cvv" placeholder="cvv">
             </div>
+            <div class="col-sm-12 col-md-2 mt-3">
+            <label for="">Fondos</label>
+            </div>
+            <div class="col-sm-4 col-md-3 mt-3 ">
+              <input type="text" class="form-control" id="fondos" name="fondos" placeholder="fondos" disabled>
+            </div>
           </div>
           <div class="col-lg-5 mt-3 text-center" >
           <?php
@@ -192,31 +201,19 @@
         </div>              
       </div>
       </div>
-      <div class="container">
-      <table class="table table-striped table-sm text-center">
+      <div class="container" id="pedidos">
+      <table class="table table-striped table-sm text-center" >
         <thead>
           <tr>
             <th scope="col">Producto </th>
             <th scope="col">Estado</th>
             <th scope="col">Importe</th>
             <th scope="col">entrega</th>
+            <th scope="col">cancelar</th>
           </tr>
         </thead>
-        <tbody>
-            <?php
-                 include ("conexion.php");
-                 $conexion = new baseDatos();
-                 $resultados = $conexion->pedidos($_SESSION["usr"]);
-                 foreach($resultados as $r)
-                 {
-                    echo "<tr> 
-                            <td>".$r["Nombre"]."</td>
-                            <td>".$r["estado"]."</td>
-                            <td>$".($r["Precio"]*$r["cantidad"])."</td>
-                            <td>".$r["fecha_entrega"]."</td>
-                          </tr>";
-                 }
-            ?>
+        <tbody id="pedidos_t">
+            
         </tbody>
       </table>
       </div>

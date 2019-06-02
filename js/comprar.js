@@ -66,8 +66,12 @@ $comprar_btn.addEventListener("click", async event => {
     const sesion = await fetch("./compra.php", {
       method: "POST",
       body: data
-    });
-    const datos = await sesion.text();
+    }).catch(function() {
+      console.log("error");
+  });
+    const datos = await sesion.text().catch(function() {
+      console.log("error");
+  });
     console.log(datos);
     futer.innerHTML="<strong>"+datos+"</strong>";
   }

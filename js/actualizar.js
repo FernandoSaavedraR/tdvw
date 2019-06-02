@@ -1,31 +1,37 @@
 async function llenar() {
- const  $nombre = document.getElementById('nombre')
- const  $apellidos = document.getElementById('apellidos')
- const $direccion = document.getElementById('direccion')
- const $sexo = document.getElementById('sexo')
- const $tarjeta = document.getElementById('tarjeta')
- const $caducidad = document.getElementById('caducidad')
- const  $cvv = document.getElementById('cvv')
- const data = await fetch("./llenar.php")
- const datos = await data.json()
- console.log(datos)
- $nombre.value = datos.nombre;
- $apellidos.value = datos.apellidos;
- $direccion.value = datos.direccion;
- console.log($sexo.selectedIndex)
- if(datos.sexo ==1){
-    $sexo.selectedIndex=0
- }else{
-    $sexo.selectedIndex=1
- }
- if(datos.cvv==null || datos.numero == null || datos.banco==null){}
- else{
+  const $fondos = document.getElementById("fondos");
+  const $nombre = document.getElementById("nombre");
+  const $apellidos = document.getElementById("apellidos");
+  const $direccion = document.getElementById("direccion");
+  const $sexo = document.getElementById("sexo");
+  const $tarjeta = document.getElementById("tarjeta");
+  const $caducidad = document.getElementById("caducidad");
+  const $cvv = document.getElementById("cvv");
+  const data = await fetch("./llenar.php").catch(function() {
+    console.log("error");
+});
+  const datos = await data.json().catch(function() {
+    console.log("error");
+});
+  console.log(datos);
+  $nombre.value = datos.nombre;
+  $apellidos.value = datos.apellidos;
+  $direccion.value = datos.direccion;
+  console.log($sexo.selectedIndex);
+  if (datos.sexo == 1) {
+    $sexo.selectedIndex = 0;
+  } else {
+    $sexo.selectedIndex = 1;
+  }
+  if (datos.cvv == null || datos.numero == null || datos.banco == null) {
+  } else {
     $tarjeta.value = datos.numero;
     $caducidad.value = datos.banco;
     $cvv.value = datos.cvv;
- }
+    $fondos.value = datos.fondos;
+  }
 }
-llenar()
+llenar();
 
 $boton = document.getElementById("actualizar");
 $boton.addEventListener("click", async () => {
@@ -34,13 +40,78 @@ $boton.addEventListener("click", async () => {
   const sesion = await fetch("./actualizar.php", {
     method: "POST",
     body: data
-  });
-  const datos = await sesion.json();
+  }).catch(function() {
+    console.log("error");
+    });
+  const datos = await sesion.json().catch(function() {
+    console.log("error");
+    });
   if (datos == "error") {
     swal.fire("Credenciales incorrectas", "revise sus datos.", "error");
-  }else{
+  } else {
     swal.fire("Datos actualizados", "todo se ha logrado actualizar", "success");
   }
   //console.log(datos);
-  llenar()
+  llenar();
 });
+
+async function pedidos() {
+  const data = await fetch("./pedir.php").catch(function() {
+    console.log("error");
+});
+  const datos = await data.json().catch(function() {
+    console.log("error");
+});
+  const $pedidost = document.getElementById("pedidos_t");
+  $pedidost.innerHTML=""
+  console.log(datos);
+  datos.forEach(r => {
+    let plantilla = `<tr>
+                <td>${r.Nombre}</td>
+               <td>${r.estado}</td>
+               <td>${r.Precio * r.cantidad}</td>
+               <td>${r.fecha_entrega}</td>
+               <td><button type=\"submit\"  data-id =\"${
+                 r.id
+               }\"class=\"btn btn-primary\">cancelar</button>
+              </tr>`;
+    $pedidost.innerHTML += plantilla;
+  });
+  $pedidos = document.getElementById("pedidos");
+  $botones = $pedidos.getElementsByTagName("button");
+  for (let i = 0; i < $botones.length; i++) {
+    $botones[i].addEventListener("click", async event => {
+      event.preventDefault();
+      $id = event.target.dataset.id;
+      const sesion = await fetch(`./cancelar.php?id=${$id}`).catch(function() {
+        console.log("error");
+    });;
+      const datos = await sesion.text().catch(function() {
+        console.log("error");
+    });;
+      console.log(datos.trim())
+      const compara = "EL ENVIO YA SE HA PROCESADO"
+      console.log(compara.trim())
+      if(datos.trim()===compara.trim()){
+        Swal.fire(
+          'Error',
+          datos,
+          'error'
+        ).then(() => {
+          pedidos()
+          llenar()
+        });
+      }else{
+        Swal.fire(
+          'Pedido cancelado',
+          datos,
+          'success'
+        ).then(() => {
+          pedidos()
+          llenar()
+        });
+      }
+    });
+  }
+}
+pedidos()

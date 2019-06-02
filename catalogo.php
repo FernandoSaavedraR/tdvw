@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="./css/modal.css" />
+  <link rel="shortcut icon" href="./img/logo.ico" type="image/x-icon">
   <title>Tarte de la vie</title>
 </head>
 
@@ -15,7 +16,7 @@
   <!-- header -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-      <a class="navbar-brand" href="#">Navbar</a>
+    <img src="./img/logowhite.svg" class="logo" alt="logo">
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -34,7 +35,8 @@
           <li class="nav-item ml-3">
           <?php
               $template;
-                session_start();
+              session_start();
+              if (isset($_SESSION["usr"])) {
                 if ($_SESSION['sesion']==1) {
                     $template = '<a
                   class="nav-link resaltado"
@@ -44,7 +46,8 @@
                   >¡tu Perfil '.$_SESSION["usr"].'!</a
                   >';
                     echo $template;
-                } else {
+                }
+               } else {
                     $template = '<a
                   class="nav-link resaltado"
                   href="registro.php"
@@ -60,13 +63,14 @@
               
             <?php
               $template;
-                session_start();
+              if (isset($_SESSION["usr"])) {
                 if ($_SESSION['sesion']==1) {
                     $template = '<button type="button" class="btn btn-success" 
                   onclick="location.href=\'logout.php\'">
                   cerrar sesión
                   </button>';
                     echo $template;
+                }
                 } else {
                     $template = '<button type="button" class="btn btn-success" 
                   onclick="location.href=\'login.php\'">
@@ -91,8 +95,9 @@
         $conexion = new baseDatos();
         $resultados = $conexion->c_Producto();
         foreach ($resultados as $r) {
-            if ($_SESSION['sesion']==1) {
-                $template = '
+          if (isset($_SESSION["usr"])) {
+              if ($_SESSION['sesion']==1) {
+                  $template = '
           <div class="col-lg-4 col-md-6 mb-2 ">
           <div class="card" style="width: 18rem;">
               <img src="'.$r["IMG"].'" class="card-img-top p-1" alt="...">
@@ -100,13 +105,14 @@
                 <p class="card-text text-center"><strong>'.$r["NOMBRE"].'</strong><br> Precio: $'.$r["PRECIO"].'<br>'.$r[DESCRIPCION].'<br>
               <button type="button" data-name="'.$r["NOMBRE"].'" data-price="'.$r["PRECIO"].'"class="btn btn-success" onclick="funcion(event)">¡Comprar!</button>
           </div></div></div>';
-            } else {
+              }
+          } else {
                 $template = '
           <div class="col-lg-4 col-md-6 mb-2">
           <div class="card" style="width: 18rem;">
               <img src="'.$r["IMG"].'" class="card-img-top p-1" alt="...">
               <div class="card-body">
-                <p class="card-text text-center"><strong>'.$r["NOMBRE"].'</strong><br> Precio: $'.$r["PRECIO"].'<br>'.$r[DESCRIPCION].'<br>
+                <p class="card-text text-center"><strong>'.$r["NOMBRE"].'</strong><br> Precio: $'.$r["PRECIO"].'<br>'.$r["DESCRIPCION"].'<br>
                 <strong> inicie sesion para comprar </strong>
           </div></div></div>';
             }

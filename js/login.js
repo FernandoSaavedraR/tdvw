@@ -9,8 +9,12 @@ $login.addEventListener('click',async (event)=>{
     const sesion = await fetch('./sesion.php', {
         method: 'POST',
         body: data
-     })
-    const datos = await sesion.json()
+     }).catch(function() {
+        console.log("error");
+    }); 
+    const datos = await sesion.json().catch(function() {
+        console.log("error");
+    });
     if(datos.SESION == 1){
         console.log("bienvenido")
         location.href ="./index.php"

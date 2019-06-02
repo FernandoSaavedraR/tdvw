@@ -10,6 +10,7 @@
     />
     <link rel="stylesheet" href="css/master.css">
     <link rel="stylesheet" href="sweet\sweetalert2.min.css">
+    <link rel="shortcut icon" href="./img/logo.ico" type="image/x-icon">
       <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   </head>
   <body>
@@ -33,7 +34,7 @@
   <!-- header -->
   <?php
        session_start();
-      if($_SESSION['sesion']==1){
+       if (isset($_SESSION["usr"])) {
         header("location:./index.php");
       }else{
         
@@ -41,7 +42,7 @@
     ?>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container">
-        <a class="navbar-brand" href="#">Navbar</a>
+      <img src="./img/logowhite.svg" class="logo" style="height:56px;"alt="logo">
         <button
           class="navbar-toggler"
           type="button"
