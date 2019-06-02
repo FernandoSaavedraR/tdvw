@@ -7,8 +7,12 @@ async function llenar() {
   const $tarjeta = document.getElementById("tarjeta");
   const $caducidad = document.getElementById("caducidad");
   const $cvv = document.getElementById("cvv");
-  const data = await fetch("./llenar.php").catch(console.log("error"));
-  const datos = await data.json().catch(console.log("error"));
+  const data = await fetch("./llenar.php").catch(function() {
+    console.log("error");
+});
+  const datos = await data.json().catch(function() {
+    console.log("error");
+});
   console.log(datos);
   $nombre.value = datos.nombre;
   $apellidos.value = datos.apellidos;
@@ -36,8 +40,12 @@ $boton.addEventListener("click", async () => {
   const sesion = await fetch("./actualizar.php", {
     method: "POST",
     body: data
-  }).catch(console.log("error"));
-  const datos = await sesion.json().catch(console.log("error"));
+  }).catch(function() {
+    console.log("error");
+    });
+  const datos = await sesion.json().catch(function() {
+    console.log("error");
+    });
   if (datos == "error") {
     swal.fire("Credenciales incorrectas", "revise sus datos.", "error");
   } else {
@@ -48,8 +56,12 @@ $boton.addEventListener("click", async () => {
 });
 
 async function pedidos() {
-  const data = await fetch("./pedir.php").catch(console.log("error"));
-  const datos = await data.json().catch(console.log("error"));
+  const data = await fetch("./pedir.php").catch(function() {
+    console.log("error");
+});
+  const datos = await data.json().catch(function() {
+    console.log("error");
+});
   const $pedidost = document.getElementById("pedidos_t");
   $pedidost.innerHTML=""
   console.log(datos);
@@ -71,8 +83,12 @@ async function pedidos() {
     $botones[i].addEventListener("click", async event => {
       event.preventDefault();
       $id = event.target.dataset.id;
-      const sesion = await fetch(`./cancelar.php?id=${$id}`);
-      const datos = await sesion.text();
+      const sesion = await fetch(`./cancelar.php?id=${$id}`).catch(function() {
+        console.log("error");
+    });;
+      const datos = await sesion.text().catch(function() {
+        console.log("error");
+    });;
       console.log(datos.trim())
       const compara = "EL ENVIO YA SE HA PROCESADO"
       console.log(compara.trim())

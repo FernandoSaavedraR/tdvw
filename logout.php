@@ -53,7 +53,9 @@
         (async function cerrar(){
         //console.log(event)
         const data = new FormData(document.getElementById('formulario'));
-        const sesion = await fetch('./ssesion.php').catch(console.log("error"))
+        const sesion = await fetch('./ssesion.php').catch(function() {
+            console.log("error");
+        });
         location.href ="./index.php"
         })();
     </script>
