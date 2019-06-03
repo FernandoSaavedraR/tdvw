@@ -16,7 +16,7 @@ html,body{
 main .carousel-inner img{
     height: 50vh;
     object-fit: cover;
-    filter:grayscale(70%);
+    /*filter:grayscale(70%);*/
 }
 .card-img-top{
     height: 300px;
