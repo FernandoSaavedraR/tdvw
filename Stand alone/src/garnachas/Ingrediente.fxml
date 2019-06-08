@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="garnachas.IngredienteController">
+   <children>
+      <StackPane snapToPixel="false" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+         <children>
+            <VBox fillWidth="false" StackPane.alignment="BOTTOM_LEFT">
+               <children>
+                  <Button fx:id="agregar" mnemonicParsing="false" onAction="#aIng" style="-fx-background-color: #99ffd6;" text="AGREGAR">
+                     <VBox.margin>
+                        <Insets left="70.0" top="150.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#surtir" style="-fx-background-color: d9d9d9;" text="SURTIR INGREDIENTE">
+                     <VBox.margin>
+                        <Insets left="35.0" top="40.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="MenuPrin" mnemonicParsing="false" onAction="#IrMenu" prefHeight="31.0" prefWidth="150.0" style="-fx-background-color: #d9d9d9;" text="MENU PRINCIPAL">
+                     <VBox.margin>
+                        <Insets left="35.0" top="150.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+               <StackPane.margin>
+                  <Insets left="700.0" top="130.0" />
+               </StackPane.margin>
+            </VBox>
+            <HBox fillHeight="false" style="-fx-background-color: #ffa64d;" StackPane.alignment="TOP_CENTER">
+               <children>
+                  <Label snapToPixel="false" text="Agregar Ingrediente" HBox.hgrow="ALWAYS">
+                     <font>
+                        <Font size="52.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="260.0" top="12.0" />
+                     </HBox.margin>
+                     <effect>
+                        <Blend mode="ADD" />
+                     </effect>
+                  </Label>
+               </children>
+               <StackPane.margin>
+                  <Insets bottom="550.0" />
+               </StackPane.margin>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </HBox>
+            <VBox fillWidth="false">
+               <children>
+                  <Label text="Nombre">
+                     <VBox.margin>
+                        <Insets left="80.0" top="20.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label text="Descripcion">
+                     <VBox.margin>
+                        <Insets left="80.0" top="30.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label text="Cantidad">
+                     <VBox.margin>
+                        <Insets left="80.0" top="29.0" />
+                     </VBox.margin>
+                  </Label>
+               </children>
+               <StackPane.margin>
+                  <Insets right="750.0" top="130.0" />
+               </StackPane.margin>
+            </VBox>
+            <VBox prefWidth="98.0">
+               <children>
+                  <TextField fx:id="nombre">
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <TextField fx:id="descripcion">
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <TextField fx:id="precio">
+                     <VBox.margin>
+                        <Insets top="15.0" />
+                     </VBox.margin>
+                  </TextField>
+               </children>
+               <StackPane.margin>
+                  <Insets left="200.0" right="250.0" top="130.0" />
+               </StackPane.margin>
+            </VBox>
+         </children>
+      </StackPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="655.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="garnachas.MenuPrincipalController">
+   <children>
+      <StackPane layoutY="10.0" prefHeight="150.0" prefWidth="200.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="10.0">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <effect>
+                  <DropShadow color="#e57c00" />
+               </effect>
+               <image>
+                  <Image url="@../img/apple.png" />
+               </image>
+            </ImageView>
+            <Button mnemonicParsing="false" onAction="#irIngrediente" style="-fx-background-color: #d9d9d9;" text="INGREDIENTES">
+               <StackPane.margin>
+                  <Insets left="15.0" top="230.0" />
+               </StackPane.margin>
+            </Button>
+         </children></StackPane>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="160.0" layoutY="153.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/food.png" />
+         </image>
+         <effect>
+            <DropShadow color="#ff8e00b8" />
+         </effect>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="642.0" layoutY="153.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/menu.png" />
+         </image>
+         <effect>
+            <DropShadow color="#e57c00" />
+         </effect>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="166.0" layoutY="386.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../img/order.png" />
+         </image>
+         <effect>
+            <DropShadow color="#ff9a00" />
+         </effect>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="642.0" layoutY="386.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/farm.png" />
+         </image>
+         <effect>
+            <DropShadow color="#ff9a00" />
+         </effect>
+      </ImageView>
+      <Button fx:id="recetitas" layoutX="200.0" layoutY="312.0" mnemonicParsing="false" onAction="#IrReceta" style="-fx-background-color: #d9d9d9;" text="RECETAS" />
+      <Button fx:id="pedido" layoutX="200.0" layoutY="557.0" mnemonicParsing="false" onAction="#IrPedido" style="-fx-background-color: #d9d9d9;" text="PEDIDOS" />
+      <Button fx:id="produc" layoutX="664.0" layoutY="312.0" mnemonicParsing="false" onAction="#IrProduct" style="-fx-background-color: #d9d9d9;" text="PRODUCTOS" />
+      <Button fx:id="Inven" layoutX="664.0" layoutY="557.0" mnemonicParsing="false" onAction="#IrInven" style="-fx-background-color: #d9d9d9;" text="INVENTARIO" />
+      <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #ffa64d;" AnchorPane.bottomAnchor="545.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+         <children>
+            <Label prefHeight="75.0" prefWidth="940.0" text="MENU PRINCIPAL">
+               <font>
+                  <Font size="52.0" />
+               </font>
+               <padding>
+                  <Insets left="270.0" top="15.0" />
+               </padding>
+               <effect>
+                  <Blend mode="ADD" />
+               </effect>
+            </Label>
+         </children>
+         <effect>
+            <DropShadow />
+         </effect>
+      </HBox>
+      <Button fx:id="btn2" layoutX="14.0" layoutY="602.0" mnemonicParsing="false" onAction="#inicioSesion" style="-fx-background-color: #ffad99;" text="CERRAR SESION" />
+   </children>
+</AnchorPane>

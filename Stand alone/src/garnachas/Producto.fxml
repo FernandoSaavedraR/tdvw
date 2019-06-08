@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="655.0" prefWidth="960.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="garnachas.ProductoController">
+   <children>
+      <StackPane prefHeight="150.0" prefWidth="200.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+         <children>
+            <VBox prefHeight="462.0" prefWidth="591.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#enviarP" style="-fx-background-color: #99ffd6;" text="Agregar">
+                     <VBox.margin>
+                        <Insets top="200.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button fx:id="MenuPrin" mnemonicParsing="false" onAction="#IrMenu" prefHeight="31.0" prefWidth="132.0" style="-fx-background-color: #d9d9d9;" text="Menu Principal">
+                     <VBox.margin>
+                        <Insets top="100.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+               <padding>
+                  <Insets left="750.0" top="130.0" />
+               </padding>
+            </VBox>
+            <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #ffa64d;">
+               <children>
+                  <Label prefHeight="75.0" prefWidth="938.0" text="Agregar Producto">
+                     <font>
+                        <Font size="52.0" />
+                     </font>
+                     <padding>
+                        <Insets left="260.0" top="12.0" />
+                     </padding>
+                     <effect>
+                        <Blend mode="ADD" />
+                     </effect>
+                  </Label>
+               </children>
+               <StackPane.margin>
+                  <Insets bottom="550.0" />
+               </StackPane.margin>
+               <effect>
+                  <DropShadow blurType="GAUSSIAN" />
+               </effect>
+            </HBox>
+            <VBox prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Label text="Nombre">
+                     <VBox.margin>
+                        <Insets left="100.0" top="20.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label text="Descripcion">
+                     <VBox.margin>
+                        <Insets left="100.0" top="30.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label text="Precio">
+                     <VBox.margin>
+                        <Insets left="100.0" top="29.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label text="Imagen">
+                     <VBox.margin>
+                        <Insets left="100.0" top="29.0" />
+                     </VBox.margin>
+                  </Label>
+               </children>
+               <StackPane.margin>
+                  <Insets right="750.0" top="130.0" />
+               </StackPane.margin>
+            </VBox>
+            <VBox prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <TextField fx:id="nombre">
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                     <padding>
+                        <Insets top="10.0" />
+                     </padding>
+                  </TextField>
+                  <TextField fx:id="descripcion">
+                     <padding>
+                        <Insets top="10.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets top="28.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <TextField fx:id="precio">
+                     <padding>
+                        <Insets top="10.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets top="15.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <Button fx:id="imagen" mnemonicParsing="false" onAction="#buscar" style="-fx-background-color: #d9d9d9;" text="Agregar Imagen">
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Label fx:id="txtL" text="Ruta de la imagen">
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </Label>
+               </children>
+               <StackPane.margin>
+                  <Insets left="200.0" right="250.0" top="130.0" />
+               </StackPane.margin>
+            </VBox>
+         </children>
+      </StackPane>
+   </children>
+</AnchorPane>

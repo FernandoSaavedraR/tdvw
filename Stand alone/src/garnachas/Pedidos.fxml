@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="655.0" prefWidth="960.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="garnachas.PedidosController">
+   <children>
+      <StackPane layoutX="10.0" layoutY="20.0" prefHeight="150.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="20.0">
+         <children>
+            <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #ffa64d;">
+               <StackPane.margin>
+                  <Insets bottom="520.0" />
+               </StackPane.margin>
+               <children>
+                  <Label style="-fx-font-family: Quicksand; -fx-font-size: 4em;" text="PEDIDOS">
+                     <HBox.margin>
+                        <Insets left="340.0" top="15.0" />
+                     </HBox.margin>
+                     <effect>
+                        <Blend mode="ADD" />
+                     </effect>
+                  </Label>
+               </children>
+               <effect>
+                  <DropShadow blurType="GAUSSIAN" />
+               </effect>
+            </HBox>
+            <VBox prefHeight="200.0" prefWidth="100.0">
+               <StackPane.margin>
+                  <Insets right="360.0" top="135.0" />
+               </StackPane.margin>
+               <children>
+                  <ScrollPane hbarPolicy="ALWAYS" pannable="true" prefHeight="466.0" prefWidth="596.0" vbarPolicy="ALWAYS">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="508.0" prefWidth="669.0">
+                           <children>
+                              <TableView fx:id="pedidos" prefHeight="515.0" prefWidth="760.0">
+                                 <columns>
+                                    <TableColumn fx:id="id" prefWidth="66.0" text="I.D." />
+                                    <TableColumn fx:id="usuario" prefWidth="103.0" text="Usuario" />
+                                    <TableColumn fx:id="producto" prefWidth="106.0" text="Producto" />
+                                    <TableColumn fx:id="precio" prefWidth="84.0" text="Precio" />
+                                    <TableColumn fx:id="estado" minWidth="0.0" prefWidth="107.0" text="Estado" />
+                                    <TableColumn fx:id="cantidad" minWidth="0.0" prefWidth="102.0" text="Cantidad" />
+                                    <TableColumn fx:id="entrega" minWidth="200.0" prefWidth="255.0" text="Entrega" />
+                                 </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </ScrollPane>
+               </children>
+            </VBox>
+            <VBox prefHeight="200.0" prefWidth="100.0">
+               <StackPane.margin>
+                  <Insets left="600.0" top="135.0" />
+               </StackPane.margin>
+               <children>
+                  <Label text="ID">
+                     <VBox.margin>
+                        <Insets left="60.0" top="10.0" />
+                     </VBox.margin></Label>
+                  <TextField fx:id="texto">
+                     <VBox.margin>
+                        <Insets left="60.0" right="220.0" top="10.0" />
+                     </VBox.margin></TextField>
+                  <Button fx:id="aceptar" mnemonicParsing="false" onAction="#aceptar" style="-fx-background-color: #99ffd6;" text="ACEPTAR">
+                     <VBox.margin>
+                        <Insets left="60.0" top="20.0" />
+                     </VBox.margin></Button>
+                  <Button fx:id="rechazar" mnemonicParsing="false" onAction="#rechazar" style="-fx-background-color: #ffad99;" text="CANCELAR PEDIDO">
+                     <VBox.margin>
+                        <Insets left="60.0" top="20.0" />
+                     </VBox.margin></Button>
+                  <Button fx:id="MenuPrin" mnemonicParsing="false" onAction="#IrMenu" style="-fx-background-color: d9d9d9;" text="MENU PRINCIPAL">
+                     <VBox.margin>
+                        <Insets left="180.0" top="250.0" />
+                     </VBox.margin></Button>
+               </children>
+            </VBox>
+         </children>
+      </StackPane>
+   </children>
+</AnchorPane>

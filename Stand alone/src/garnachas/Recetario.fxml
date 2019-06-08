@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="655.0" prefWidth="960.0" style="-fx-background-color: TRANSPARENT;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="garnachas.RecetarioController">
+   <children>
+      <StackPane prefHeight="150.0" prefWidth="200.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+         <children>
+            <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #ffa64d;">
+               <StackPane.margin>
+                  <Insets bottom="505.0" />
+               </StackPane.margin>
+               <children>
+                  <Label style="-fx-font-family: quicksand; -fx-font-size: 5em;" text="RECETARIO">
+                     <HBox.margin>
+                        <Insets left="300.0" />
+                     </HBox.margin>
+                     <effect>
+                        <Blend mode="ADD" />
+                     </effect>
+                  </Label>
+               </children>
+               <effect>
+                  <DropShadow blurType="GAUSSIAN" />
+               </effect>
+            </HBox>
+            <VBox prefHeight="200.0" prefWidth="100.0">
+               <StackPane.margin>
+                  <Insets left="500.0" top="120.0" />
+               </StackPane.margin>
+               <children>
+                  <Button mnemonicParsing="false" onAction="#agregarIng" style="-fx-background-color: #99ffd6;" text="AGREGAR" textAlignment="CENTER">
+                     <VBox.margin>
+                        <Insets left="100.0" top="180.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button fx:id="MenuPrin" mnemonicParsing="false" onAction="#IrMenu" style="-fx-background-color: d9d9d9;" text="MENU PRINCIPAL">
+                     <VBox.margin>
+                        <Insets left="260.0" top="200.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
+            <VBox prefHeight="200.0" prefWidth="100.0">
+               <StackPane.margin>
+                  <Insets right="450.0" top="120.0" />
+               </StackPane.margin>
+               <children>
+                  <ComboBox fx:id="Producto" prefWidth="150.0" promptText="Producto" style="-fx-background-color: d9d9d9;">
+                     <VBox.margin>
+                        <Insets left="120.0" top="80.0" />
+                     </VBox.margin>
+                  </ComboBox>
+                  <ComboBox fx:id="ingrediente" prefWidth="150.0" promptText="Ingrediente" style="-fx-background-color: d9d9d9;">
+                     <VBox.margin>
+                        <Insets left="120.0" top="200.0" />
+                     </VBox.margin>
+                  </ComboBox>
+                  <HBox prefHeight="59.0" prefWidth="490.0">
+                     <children>
+                        <Label text="Cantidad">
+                           <HBox.margin>
+                              <Insets left="5.0" top="5.0" />
+                           </HBox.margin></Label>
+                        <TextField fx:id="cantidad" prefHeight="25.0" prefWidth="199.0">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </TextField>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </StackPane>
+   </children>
+</AnchorPane>

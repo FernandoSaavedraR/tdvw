@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="655.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="garnachas.InventarioController">
+   <children>
+      <StackPane prefHeight="150.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="20.0">
+         <children>
+            <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #ffa64d;">
+               <children>
+                  <Label style="-fx-font-family: Quicksand; -fx-font-size: 4em;" text="INVENTARIO">
+                     <HBox.margin>
+                        <Insets left="340.0" top="15.0" />
+                     </HBox.margin>
+                     <effect>
+                        <Blend mode="ADD" />
+                     </effect>
+                  </Label>
+               </children>
+               <StackPane.margin>
+                  <Insets bottom="520.0" />
+               </StackPane.margin>
+               <effect>
+                  <DropShadow blurType="GAUSSIAN" />
+               </effect>
+            </HBox>
+            <VBox prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <ScrollPane hbarPolicy="ALWAYS" pannable="true" prefHeight="466.0" prefWidth="596.0" vbarPolicy="ALWAYS">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="508.0" prefWidth="669.0">
+                           <children>
+                              <TableView fx:id="pedidos" prefHeight="515.0" prefWidth="710.0">
+                                 <columns>
+                                    <TableColumn fx:id="id" prefWidth="75.0" text="I.D." />
+                                    <TableColumn fx:id="nombre" prefWidth="125.0" text="PRODUCTO" />
+                                    <TableColumn fx:id="producto" prefWidth="118.0" text="INGREDIENTE" />
+                                    <TableColumn fx:id="disponible" minWidth="0.0" prefWidth="111.0" text="DISPONIBLE" />
+                                    <TableColumn fx:id="requerido" minWidth="0.0" prefWidth="121.0" text="NECESITA" />
+                                 </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </ScrollPane>
+               </children>
+               <StackPane.margin>
+                  <Insets right="360.0" top="135.0" />
+               </StackPane.margin>
+            </VBox>
+            <VBox prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Label text="ID">
+                     <VBox.margin>
+                        <Insets left="60.0" top="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <TextField fx:id="eliminar">
+                     <VBox.margin>
+                        <Insets left="60.0" right="220.0" top="10.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <Button mnemonicParsing="false" onAction="#eliminar" style="-fx-background-color: #ffad99;" text="ELIMINAR">
+                     <VBox.margin>
+                        <Insets left="60.0" top="20.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Label text="PRODUCTO O INGREDIENTE">
+                     <VBox.margin>
+                        <Insets left="60.0" top="50.0" />
+                     </VBox.margin>
+                  </Label>
+                  <TextField fx:id="filtro">
+                     <VBox.margin>
+                        <Insets left="60.0" right="140.0" top="10.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <HBox prefHeight="49.0" prefWidth="340.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#filtrar" style="-fx-background-color: d9d9d9;" text="FILTRAR" />
+                        <Button fx:id="reiniciar" mnemonicParsing="false" onAction="#llenar" style="-fx-background-color: d9d9d9;" text="REINICIAR">
+                           <HBox.margin>
+                              <Insets left="60.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                     <padding>
+                        <Insets left="60.0" top="10.0" />
+                     </padding>
+                  </HBox>
+                  <Button fx:id="MenuPrin" mnemonicParsing="false" onAction="#IrMenu" style="-fx-background-color: d9d9d9;" text="MENU PRINCIPAL">
+                     <VBox.margin>
+                        <Insets left="180.0" top="150.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+               <StackPane.margin>
+                  <Insets left="600.0" top="135.0" />
+               </StackPane.margin>
+            </VBox>
+         </children>
+      </StackPane>
+   </children>
+</AnchorPane>

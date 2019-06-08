@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="677.0" prefWidth="402.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="garnachas.FXMLDocumentController">
+   <children>
+      <StackPane prefHeight="195.0" prefWidth="168.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+         <children>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Label alignment="CENTER" text="Usuario">
+                           <VBox.margin>
+                              <Insets left="25.0" top="289.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label alignment="CENTER" text="Contraseña">
+                           <VBox.margin>
+                              <Insets left="10.0" top="60.0" />
+                           </VBox.margin>
+                        </Label>
+                     </children>
+                     <effect>
+                        <DropShadow color="#ff8901" />
+                     </effect>
+                  </VBox>
+                  <VBox prefHeight="657.0" prefWidth="175.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 1.2em; -fx-font-weight: bold; -fx-font-family: Quicksand;" text="Tarte de la vie" textAlignment="CENTER">
+                           <VBox.margin>
+                              <Insets left="5.0" />
+                           </VBox.margin>
+                        </Text>
+                        <StackPane prefHeight="183.0" prefWidth="175.0" style="-fx-background-color: #ffc266; -fx-background-radius: 100;">
+                           <VBox.margin>
+                              <Insets top="40.0" />
+                           </VBox.margin>
+                           <children>
+                              <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/eat-circle-orange-512.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </StackPane>
+                        <TextField fx:id="usr">
+                           <VBox.margin>
+                              <Insets top="40.0" />
+                           </VBox.margin>
+                           <effect>
+                              <DropShadow color="#ff8400" />
+                           </effect>
+                        </TextField>
+                        <PasswordField fx:id="psw">
+                           <VBox.margin>
+                              <Insets top="50.0" />
+                           </VBox.margin>
+                           <effect>
+                              <DropShadow color="#ff7300" />
+                           </effect>
+                        </PasswordField>
+                        <Button fx:id="btn1" mnemonicParsing="false" onAction="#handleButtonAction" style="-fx-background-color: #d9d9d9;" text="ENTRAR">
+                           <VBox.margin>
+                              <Insets left="55.0" top="50.0" />
+                           </VBox.margin>
+                           <effect>
+                              <DropShadow blurType="GAUSSIAN" color="#ffae006f" />
+                           </effect>
+                        </Button>
+                        <StackPane />
+                        <Label fx:id="mensaje" alignment="CENTER" prefHeight="52.0" prefWidth="190.0" textAlignment="CENTER" />
+                        <Button mnemonicParsing="false" onAction="#registrarse" style="-fx-background-color: #d9d9d9;" text="REGISTRARSE">
+                           <effect>
+                              <DropShadow blurType="GAUSSIAN" color="#ffae006f" />
+                           </effect>
+                           <VBox.margin>
+                              <Insets left="35.0" />
+                           </VBox.margin>
+                        </Button>
+                     </children>
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </VBox>
+                  <VBox prefHeight="200.0" prefWidth="100.0" />
+               </children>
+            </HBox>
+         </children>
+      </StackPane>
+   </children>
+</AnchorPane>

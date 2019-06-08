@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="404.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="garnachas.RegistroController">
+   <children>
+      <VBox layoutY="2.0" prefHeight="617.0" prefWidth="600.0">
+         <children>
+            <HBox fillHeight="false" focusTraversable="true" style="-fx-background-color: #ffa64d;">
+               <children>
+                  <Label prefHeight="75.0" prefWidth="600.0" snapToPixel="false" text="Registro" HBox.hgrow="ALWAYS">
+                     <effect>
+                        <Blend mode="ADD" />
+                     </effect>
+                     <font>
+                        <Font size="52.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="200.0" top="12.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+               <effect>
+                  <DropShadow />
+               </effect>
+               <VBox.margin>
+                  <Insets left="2.0" right="2.0" top="2.0" />
+               </VBox.margin>
+            </HBox>
+            <VBox prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Label text="Nombre">
+                     <VBox.margin>
+                        <Insets left="10.0" top="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <TextField fx:id="nombre">
+                     <VBox.margin>
+                        <Insets left="10.0" right="150.0" top="10.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <Label text="Apellidos">
+                     <VBox.margin>
+                        <Insets left="10.0" top="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <TextField fx:id="apellidos">
+                     <VBox.margin>
+                        <Insets left="10.0" right="150.0" top="10.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <Label text="Direccion">
+                     <VBox.margin>
+                        <Insets left="10.0" top="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <TextField fx:id="direccion">
+                     <VBox.margin>
+                        <Insets left="10.0" right="150.0" top="10.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <Label text="usuario">
+                     <VBox.margin>
+                        <Insets left="10.0" top="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <TextField fx:id="usuario">
+                     <VBox.margin>
+                        <Insets left="10.0" right="150.0" top="10.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <Label text="Contraseña">
+                     <VBox.margin>
+                        <Insets left="10.0" top="10.0" />
+                     </VBox.margin>
+                  </Label>
+               </children>
+            </VBox>
+            <PasswordField fx:id="pass">
+               <VBox.margin>
+                  <Insets left="10.0" right="150.0" top="10.0" />
+               </VBox.margin>
+            </PasswordField>
+            <Label text="Sexo">
+               <VBox.margin>
+                  <Insets left="10.0" top="10.0" />
+               </VBox.margin>
+            </Label>
+            <ComboBox fx:id="Sexo" prefWidth="150.0" promptText="Sexo" style="-fx-background-color: d9d9d9;">
+               <VBox.margin>
+                  <Insets left="10.0" top="10.0" />
+               </VBox.margin>
+            </ComboBox>
+            <Label text="Tarjeta">
+               <VBox.margin>
+                  <Insets left="10.0" top="10.0" />
+               </VBox.margin>
+            </Label>
+            <HBox prefHeight="45.0" prefWidth="570.0">
+               <children>
+                  <TextField fx:id="Tarjeta" prefHeight="25.0" prefWidth="201.0" promptText="Numero de Tarjeta">
+                     <HBox.margin>
+                        <Insets top="10.0" />
+                     </HBox.margin>
+                  </TextField>
+                  <TextField fx:id="Banco" promptText="Banco">
+                     <HBox.margin>
+                        <Insets left="20.0" top="10.0" />
+                     </HBox.margin>
+                  </TextField>
+                  <TextField fx:id="cvv" prefHeight="25.0" prefWidth="131.0" promptText="cvv">
+                     <HBox.margin>
+                        <Insets left="20.0" top="10.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+               <VBox.margin>
+                  <Insets left="10.0" right="150.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#registrarse" prefHeight="31.0" prefWidth="150.0" style="-fx-background-color: #d9d9d9;" text="REGISTRARSE">
+                     <HBox.margin>
+                        <Insets left="20.0" top="10.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#inicioSesion" prefHeight="31.0" prefWidth="150.0" style="-fx-background-color: #d9d9d9;" text="LOGIN">
+                     <HBox.margin>
+                        <Insets left="20.0" top="10.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
